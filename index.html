@@ -10,181 +10,502 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-:root{
---bg:#12051f;
---bg2:#1c0a2a;
---card:rgba(255,255,255,.04);
---border:rgba(255,255,255,.09);
---gold:#d4af37;
---gold2:#f6d365;
---shadow:0 16px 40px rgba(0,0,0,.35);
-}
-body{background:var(--bg);color:#fff;line-height:1.6;}
-header{
-background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.78)),url("images/hero.webp");
-background-size:cover;background-position:center;
-min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:50px 18px;
-}
-header img{width:190px;margin-bottom:18px;filter:drop-shadow(0 12px 22px rgba(0,0,0,.45));}
-header h1{font-size:52px;}
-header p{font-size:18px;opacity:.92;margin-top:10px;max-width:760px;margin-left:auto;margin-right:auto;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins, sans-serif;}
+  :root{
+    --bg:#12051f;
+    --bg2:#1c0a2a;
+    --card:rgba(255,255,255,.04);
+    --border:rgba(255,255,255,.09);
+    --gold:#d4af37;
+    --gold2:#f6d365;
+    --shadow:0 16px 40px rgba(0,0,0,.35);
+  }
+  body{background:var(--bg);color:#fff;line-height:1.6;}
 
-.top-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid rgba(255,255,255,.16);background:transparent;color:#fff;transition:.2s;}
-.btn.primary{background:var(--gold);color:#1a0a26;}
-.btn:hover{transform:translateY(-2px);}
+  header{
+    background:
+      linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.78)),
+      url("images/hero.webp");
+    background-size:cover;background-position:center;
+    min-height:92vh;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    padding:50px 18px;
+  }
+  header img{
+    width:190px;
+    margin-bottom:18px;
+    filter:drop-shadow(0 12px 22px rgba(0,0,0,.45));
+  }
+  header h1{font-size:52px;letter-spacing:1.5px;}
+  header p{font-size:18px;opacity:.92;margin-top:10px;max-width:760px;margin-left:auto;margin-right:auto;}
 
-nav{background:rgba(28,10,42,.92);padding:14px 10px;position:sticky;top:0;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);}
-nav a{color:#fff;margin:0 14px;text-decoration:none;font-weight:500;}
-nav a:hover{color:var(--gold2);}
+  .top-cta{
+    margin-top:22px;
+    display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:14px;
+    text-decoration:none;
+    font-weight:600;font-size:15px;
+    border:1px solid rgba(255,255,255,.16);
+    background:transparent;color:#fff;
+    transition:.2s; box-shadow:none;
+  }
+  .btn.primary{
+    background:var(--gold);
+    border:1px solid rgba(212,175,55,.45);
+    color:#1a0a26;
+    box-shadow:0 14px 32px rgba(212,175,55,.16);
+  }
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.04);}
 
-section{padding:70px 10%;}
-h2{font-size:38px;margin-bottom:22px;color:var(--gold2);}
+  nav{
+    background:rgba(28,10,42,.92);
+    backdrop-filter: blur(10px);
+    padding:14px 10px;
+    position:sticky;top:0;z-index:1000;text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  nav a{
+    color:#fff;margin:0 14px;text-decoration:none;
+    font-weight:500;opacity:.9;
+  }
+  nav a:hover{opacity:1;color:var(--gold2);}
 
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:.22s;}
-.card:hover{transform:translateY(-6px);}
-.card .imgwrap{height:180px;background:#000;}
-.card img{width:100%;height:100%;object-fit:cover;display:block;}
-.card .content{padding:18px;}
-.card h3{font-size:18px;margin-bottom:8px;}
-.card p{opacity:.86;font-size:14px;margin-bottom:12px;}
+  section{padding:70px 10%;}
+  h2{font-size:38px;margin-bottom:22px;color:var(--gold2);}
 
-.prices{display:flex;flex-wrap:wrap;gap:10px;}
-.pill{background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.35);padding:8px 10px;border-radius:12px;font-size:13px;}
-.pill strong{color:var(--gold2);}
+  .grid-2{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:34px;
+    align-items:center;
+  }
 
-footer{text-align:center;padding:30px 10px;background:#0b0215;margin-top:40px;border-top:1px solid rgba(255,255,255,.06);}
+  .box{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+
+  .about-img{
+    width:100%;
+    border-radius:18px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+  }
+
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .badge{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    padding:8px 12px;border-radius:999px;font-size:13px;opacity:.95;
+  }
+
+  /* Massage Cards (Ayutthaya-Style: Bild oben, Content unten) */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:26px;
+  }
+
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.22s;
+  }
+  .card:hover{transform:translateY(-6px);}
+  .card .imgwrap{height:180px;background:#000;}
+  .card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.03);}
+  .card .content{padding:18px 18px 16px;}
+  .card h3{font-size:18px;margin-bottom:8px;}
+  .card p{opacity:.86;font-size:14px;margin-bottom:12px;}
+
+  .prices{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .pill{
+    background:rgba(212,175,55,.14);
+    border:1px solid rgba(212,175,55,.35);
+    color:#fff;
+    padding:8px 10px;border-radius:12px;
+    font-size:13px;
+  }
+  .pill strong{color:var(--gold2);font-weight:700;}
+
+  .highlight{
+    margin-top:26px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;
+  }
+  .hl{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;padding:20px;
+    box-shadow:var(--shadow);
+  }
+  .hl h3{margin-bottom:10px;}
+  .hl ul{margin-left:18px;opacity:.92;}
+  .hl li{margin:6px 0;}
+  .small{opacity:.75;font-size:13px;margin-top:10px;}
+
+  /* Gutschein */
+  .voucher{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    align-items:center;
+  }
+  .voucher a{
+    display:block;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    transition:.2s;
+  }
+  .voucher a:hover{transform:translateY(-4px);}
+  .voucher img{width:100%;height:auto;display:block;}
+  .voucher .box p{opacity:.9;}
+
+  /* Galerie */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+  .gallery img{
+    width:100%;
+    border-radius:18px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+  }
+
+  /* Kontakt + Maps */
+  .contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+  }
+  .kv div{margin:10px 0;opacity:.92;}
+  .mapwrap{
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    height:360px;
+  }
+  .mapwrap iframe{width:100%;height:100%;border:0;}
+
+  footer{
+    text-align:center;
+    padding:30px 10px;
+    background:#0b0215;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+  footer p{opacity:.85;margin:4px 0;}
+
+  @media(max-width:980px){
+    section{padding:60px 7%;}
+    header h1{font-size:36px;}
+    .grid-2,.contact,.highlight,.voucher{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 
 <body>
 
 <header>
-<div>
-<img src="images/logo.webp" alt="Mayyah Thaimassage Logo">
-<h1>Mayyah Thaimassage</h1>
-<p>Traditionelle Thai Massage für Körper und Seele – Entspannung, Regeneration und Wohlbefinden.</p>
-<div class="top-cta">
-<a class="btn primary" href="https://wa.me/4917643195587">WhatsApp</a>
-<a class="btn" href="tel:021747401974">Anrufen</a>
-<a class="btn" href="#services">Massagen & Preise</a>
-</div>
-</div>
+  <div>
+    <img src="images/logo.webp" alt="Mayyah Thaimassage Logo">
+    <h1>Mayyah Thaimassage</h1>
+    <p>Traditionelle Thai Massage für Körper und Seele – Entspannung, Regeneration und Wohlbefinden.</p>
+
+    <div class="top-cta">
+      <a class="btn primary" href="https://wa.me/4917643195587">WhatsApp</a>
+      <a class="btn" href="tel:021747401974">Anrufen</a>
+      <a class="btn" href="#services">Massagen & Preise</a>
+    </div>
+  </div>
 </header>
 
 <nav>
-<a href="#services">Massagen</a>
-<a href="#kontakt">Kontakt</a>
+  <a href="#about">Studio</a>
+  <a href="#services">Massagen & Preise</a>
+  <a href="#gutscheine">Gutscheine</a>
+  <a href="#gallery">Eindrücke</a>
+  <a href="#anfahrt">Anfahrt</a>
+  <a href="#kontakt">Kontakt</a>
 </nav>
 
+<section id="about">
+  <h2>Willkommen</h2>
+
+  <div class="grid-2">
+    <div class="box">
+      <p>
+        Wir legen großen Wert auf Hygiene, Sauberkeit und professionelle Thai-Massagen.
+        Unsere Betten sind mit Medizin-Auflagen ausgelegt und werden nach jeder Benutzung getauscht.
+      </p>
+      <p style="margin-top:14px;opacity:.9">
+        Unsere Mitarbeiterinnen verfügen über qualifizierte Ausbildung und langjährige Erfahrung.
+        Bei allen Massagen steht die Regeneration auf natürliche Weise im Vordergrund.
+      </p>
+
+      <div class="badges">
+        <span class="badge">KEINE EROTIKMASSAGE</span>
+        <span class="badge">Hygiene & Sauberkeit</span>
+        <span class="badge">Nach tel. Vereinbarung</span>
+      </div>
+    </div>
+
+    <img class="about-img" src="images/empfang.webp" alt="Empfang / Studio">
+  </div>
+</section>
+
 <section id="services">
-<h2>Massagen & Preise</h2>
+  <h2>Massagen & Preise</h2>
 
-<div class="services">
+  <div class="services">
 
-<div class="card">
-<div class="imgwrap"><img src="images/thaimassage.webp" alt="Klassische Thaimassage"></div>
-<div class="content">
-<h3>Klassische Thaimassage</h3>
-<p>Traditionelle Druckpunktmassage mit Dehnung – fördert Durchblutung und löst Verspannungen.</p>
-<div class="prices">
-<span class="pill"><strong>60 Min</strong> 55€</span>
-<span class="pill"><strong>90 Min</strong> 75€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/thaimassage.webp" alt="Klassische Thaimassage"></div>
+      <div class="content">
+        <h3>Klassische Thaimassage</h3>
+        <p>Traditionelle Druckpunktmassage mit Dehnung – fördert Durchblutung und löst Verspannungen.</p>
+        <div class="prices">
+          <span class="pill"><strong>60 Min</strong> 55€</span>
+          <span class="pill"><strong>90 Min</strong> 75€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/thaiaromatherapie.webp" alt="Aromaöl Massage"></div>
-<div class="content">
-<h3>Aromaöl Massage</h3>
-<p>Entspannende Massage mit ätherischen Ölen – ideal zum Stressabbau.</p>
-<div class="prices">
-<span class="pill"><strong>60 Min</strong> 60€</span>
-<span class="pill"><strong>90 Min</strong> 80€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/thaiaromatherapie.webp" alt="Aromaöl Massage"></div>
+      <div class="content">
+        <h3>Aromaöl Massage</h3>
+        <p>Entspannende Massage mit ätherischen Ölen – ideal zum Stressabbau.</p>
+        <div class="prices">
+          <span class="pill"><strong>60 Min</strong> 60€</span>
+          <span class="pill"><strong>90 Min</strong> 80€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/thaiyoga.webp" alt="Thai Yoga Massage"></div>
-<div class="content">
-<h3>Thai Yoga Massage</h3>
-<p>Passive Dehnungen und Druckpunkte – aktiviert Energiebahnen.</p>
-<div class="prices">
-<span class="pill"><strong>60 Min</strong> 60€</span>
-<span class="pill"><strong>90 Min</strong> 80€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/thaiyoga.webp" alt="Thai Yoga Massage"></div>
+      <div class="content">
+        <h3>Thai Yoga Massage</h3>
+        <p>Passive Dehnungen, Streckungen und Druckpunkte – wirkt auf Energiebahnen (Meridiane).</p>
+        <div class="prices">
+          <span class="pill"><strong>60 Min</strong> 60€</span>
+          <span class="pill"><strong>90 Min</strong> 80€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/hotstone.webp" alt="Hot Stone Massage"></div>
-<div class="content">
-<h3>Hot-Stone-Massage</h3>
-<p>Ganzkörpermassage mit erwärmten Basaltsteinen.</p>
-<div class="prices">
-<span class="pill"><strong>60 Min</strong> 65€</span>
-<span class="pill"><strong>90 Min</strong> 85€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/hotstone.webp" alt="Hot Stone Massage"></div>
+      <div class="content">
+        <h3>Hot-Stone-Massage</h3>
+        <p>Ganzkörpermassage mit erwärmten Basaltsteinen und warmen Aromaölen.</p>
+        <div class="prices">
+          <span class="pill"><strong>60 Min</strong> 65€</span>
+          <span class="pill"><strong>90 Min</strong> 85€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/kraeuterstempel.webp" alt="Kräuterstempel Massage"></div>
-<div class="content">
-<h3>Kräuterstempel Massage</h3>
-<p>Warme Kräuterstempel für intensive Tiefenentspannung.</p>
-<div class="prices">
-<span class="pill"><strong>60 Min</strong> 65€</span>
-<span class="pill"><strong>90 Min</strong> 85€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/kraeuterstempel.webp" alt="Kräuterstempel Massage"></div>
+      <div class="content">
+        <h3>Kräuterstempel Massage</h3>
+        <p>Mit Dampf erhitzte Kräuterstempel ergänzen die Massage – wohltuend und tiefenentspannend.</p>
+        <div class="prices">
+          <span class="pill"><strong>60 Min</strong> 65€</span>
+          <span class="pill"><strong>90 Min</strong> 85€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/kopfgesicht.webp" alt="Kopf- & Gesichtsmassage"></div>
-<div class="content">
-<h3>Kopf- & Gesichtsmassage</h3>
-<p>Sanfte Entspannung für Kopf und Gesicht.</p>
-<div class="prices">
-<span class="pill"><strong>30 Min</strong> 30€</span>
-<span class="pill"><strong>60 Min</strong> 60€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/kopfgesicht.webp" alt="Kopf- und Gesichtsmassage"></div>
+      <div class="content">
+        <h3>Kopf- & Gesichtsmassage</h3>
+        <p>Sanfte Berührungen und Druckpunkte – fördert Durchblutung und Entspannung.</p>
+        <div class="prices">
+          <span class="pill"><strong>30 Min</strong> 30€</span>
+          <span class="pill"><strong>60 Min</strong> 60€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/fussmassage.webp" alt="Fußmassage"></div>
-<div class="content">
-<h3>Fußmassage</h3>
-<p>Stimuliert Reflexzonen – wohltuend für den ganzen Körper.</p>
-<div class="prices">
-<span class="pill"><strong>30 Min</strong> 30€</span>
-<span class="pill"><strong>60 Min</strong> 60€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/fussmassage.webp" alt="Fußmassage"></div>
+      <div class="content">
+        <h3>Fußmassage</h3>
+        <p>Stimuliert Reflexzonen – eine Wohltat, nicht nur für Ihre Füße.</p>
+        <div class="prices">
+          <span class="pill"><strong>30 Min</strong> 30€</span>
+          <span class="pill"><strong>60 Min</strong> 60€</span>
+        </div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="imgwrap"><img src="images/rueckenmassage.webp" alt="Rückenmassage"></div>
-<div class="content">
-<h3>Rückenmassage</h3>
-<p>Ideal bei Nacken- und Schulterverspannungen.</p>
-<div class="prices">
-<span class="pill"><strong>30 Min</strong> 30€</span>
-<span class="pill"><strong>60 Min</strong> 60€</span>
-</div>
-</div>
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/rueckenmassage.webp" alt="Rückenmassage"></div>
+      <div class="content">
+        <h3>Rückenmassage</h3>
+        <p>Zielt auf Nacken- und Schulterbereich – ideal bei sitzender Tätigkeit und Stress.</p>
+        <div class="prices">
+          <span class="pill"><strong>30 Min</strong> 30€</span>
+          <span class="pill"><strong>60 Min</strong> 60€</span>
+        </div>
+      </div>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="imgwrap"><img src="images/empfang.webp" alt="Massage for Kids"></div>
+      <div class="content">
+        <h3>Massage for Kids</h3>
+        <p>Sanfte Behandlung für Kinder – lockert Muskeln und fördert Wohlbefinden.</p>
+        <div class="prices">
+          <span class="pill"><strong>30 Min</strong> 23€</span>
+          <span class="pill"><strong>60 Min</strong> 45€</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight">
+    <div class="hl">
+      <h3>Unsere Empfehlung: Mayyah 2 in 1 Spezial Paket</h3>
+      <ul>
+        <li>Klassische Thai Massage (mit oder ohne Öl) <strong>90 Min</strong></li>
+        <li>+ Fußmassage inkl. Fußbad <strong>30 Min</strong></li>
+        <li><strong>120 Min – 99€</strong></li>
+      </ul>
+      <p class="small">Hinweis: Paarmassage Hot Stone oder Kräuterstempel gegen Aufpreis möglich.</p>
+    </div>
+
+    <div class="hl">
+      <h3>Doppel-/Paarmassage</h3>
+      <p>Im Doppelmassageraum werden Sie zeitgleich nebeneinander liegend massiert.</p>
+      <div class="prices" style="margin-top:10px;">
+        <span class="pill"><strong>60 Min</strong> 100€</span>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn primary" href="https://wa.me/4917643195587">Per WhatsApp anfragen</a>
+        <a class="btn" href="tel:021747401974">Telefonisch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gutscheine">
+  <h2>Gutscheine</h2>
+
+  <div class="voucher">
+    <div class="box">
+      <p>
+        Fragen Sie uns nach unseren <strong>Mayyah Gutscheinen</strong> und schenken Sie Wohlbefinden
+        und Entspannung in Form einer Thai-Massage.
+      </p>
+      <p class="small">Tipp: Klicken Sie auf den Gutschein, um direkt WhatsApp zu öffnen.</p>
+      <div style="margin-top:14px;">
+        <a class="btn primary" href="https://wa.me/4917643195587">Gutschein per WhatsApp bestellen</a>
+      </div>
+    </div>
+
+    <!-- Klick auf Gutschein => WhatsApp -->
+    <a href="https://wa.me/4917643195587" aria-label="Gutschein per WhatsApp anfragen">
+      <img src="images/gutschein.webp" alt="Mayyah Gutschein">
+    </a>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Studio Eindrücke</h2>
+
+  <div class="gallery">
+    <img src="images/empfang.webp" alt="Studio / Empfang">
+    <img src="images/thaimassage.webp" alt="Massage Impression Thai">
+    <img src="images/hotstone.webp" alt="Massage Impression Hot Stone">
+  </div>
+</section>
+
+<section id="anfahrt">
+  <h2>Anfahrt & Standort</h2>
+
+  <div class="contact">
+    <div class="box">
+      <h3 style="margin-bottom:10px;">Adresse</h3>
+      <div class="kv">
+        <div><strong>Mayyah Thaimassage</strong></div>
+        <div>Hauptstraße 53a</div>
+        <div>51519 Odenthal</div>
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn primary" href="https://www.google.com/maps/dir/?api=1&destination=Hauptstra%C3%9Fe%2053a%2C%2051519%20Odenthal">Route in Google Maps</a>
+        <a class="btn" href="https://maps.apple.com/?daddr=Hauptstra%C3%9Fe%2053a%2C%2051519%20Odenthal">Route in Apple Maps</a>
+      </div>
+
+      <p class="small">Hinweis: Parkmöglichkeiten/Anfahrt-Text kannst du hier später ergänzen.</p>
+    </div>
+
+    <div class="mapwrap" aria-label="Google Maps Standort">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Hauptstra%C3%9Fe%2053a%2C%2051519%20Odenthal&output=embed">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+
+  <div class="contact">
+    <div class="box">
+      <h3>Telefon / WhatsApp</h3>
+      <div class="kv">
+        <div><strong>Tel.:</strong> <a style="color:#fff;text-decoration:none;" href="tel:021747401974">02174 7401974</a></div>
+        <div><strong>WhatsApp:</strong> <a style="color:#fff;text-decoration:none;" href="https://wa.me/4917643195587">0176 43195587</a></div>
+      </div>
+
+      <h3 style="margin-top:18px;">Öffnungszeiten</h3>
+      <div class="kv">
+        <div>Mo – Fr: 10:00 – 19:00 Uhr</div>
+        <div>Sa: 10:00 – 18:00 Uhr</div>
+        <div>So: Ruhetag</div>
+        <div class="small">Auch nach telefonischer Vereinbarung.</div>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>Jetzt Termin anfragen</h3>
+      <p style="opacity:.9">Am schnellsten geht’s über WhatsApp.</p>
+
+      <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn primary" href="https://wa.me/4917643195587">WhatsApp öffnen</a>
+        <a class="btn" href="tel:021747401974">Anrufen</a>
+      </div>
+
+      <p class="small" style="margin-top:14px;">KEINE EROTIKMASSAGE</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>© Mayyah Thaimassage – Alle Rechte vorbehalten</p>
+  <p>© Mayyah Thaimassage – Alle Rechte vorbehalten</p>
+  <p>Hauptstraße 53a · 51519 Odenthal · Tel.: 02174 7401974 · WhatsApp: 0176 43195587</p>
 </footer>
 
 </body>

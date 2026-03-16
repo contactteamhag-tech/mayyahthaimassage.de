@@ -3,1381 +3,835 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chang Thai Köln – Thai Food Delivery & Abholung</title>
-  <meta name="description" content="Elegante und moderne Website für Chang Thai Köln mit Liefer- und Abholsystem, digitaler Speisekarte, Zeitslot-Auswahl und Warenkorb." />
-  <meta name="theme-color" content="#121212" />
-
+  <title>City Döner Frechen – Döner online bestellen</title>
+  <meta name="description" content="City Döner Frechen – moderne Döner-Website mit eigenem Bestellsystem für Abholung und Lieferung. Frisch, schnell, direkt bestellt ohne externe Plattform." />
+  <meta name="theme-color" content="#111111" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0d0d0f;
-      --bg-soft:#141418;
-      --panel:#18181d;
-      --panel-2:#1e1e24;
-      --card:rgba(255,255,255,0.05);
-      --card-strong:rgba(255,255,255,0.08);
-      --line:rgba(255,255,255,0.10);
-      --text:#f5f2eb;
-      --muted:#b8b3aa;
-      --gold:#d4af37;
-      --gold-soft:#f0d98f;
-      --accent:#d96c2d;
-      --danger:#ef4444;
-      --success:#22c55e;
-      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --bg:#0f0f10;
+      --bg-soft:#171719;
+      --bg-card:#1f2023;
+      --line:rgba(255,255,255,.08);
+      --line-strong:rgba(255,255,255,.16);
+      --text:#f5f5f5;
+      --muted:#b8b8b8;
+      --accent:#f5c400;
+      --accent-strong:#ffdd33;
+      --accent-dark:#9b7300;
+      --danger:#ff6b57;
+      --success:#2ecc71;
+      --shadow:0 24px 60px rgba(0,0,0,.35);
       --radius:24px;
       --radius-sm:16px;
       --max:1240px;
-      --header-h:84px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(212,175,55,.15), transparent 30%),
-        radial-gradient(circle at top right, rgba(217,108,45,.08), transparent 20%),
-        linear-gradient(180deg, #0b0b0d 0%, #121216 42%, #0e0e11 100%);
-      line-height:1.6;
+        radial-gradient(circle at top right, rgba(245,196,0,.14), transparent 28%),
+        radial-gradient(circle at left center, rgba(245,196,0,.08), transparent 24%),
+        linear-gradient(180deg, #111214 0%, #0d0e10 100%);
+      line-height:1.5;
       overflow-x:hidden;
     }
 
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     button,input,select,textarea{font:inherit}
-
-    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
     .section{padding:92px 0}
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:var(--gold-soft);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-size:.78rem;
-      font-weight:700;
+      display:inline-flex;align-items:center;gap:10px;
+      background:rgba(245,196,0,.10);
+      border:1px solid rgba(245,196,0,.16);
+      color:var(--accent-strong);
+      padding:10px 14px;border-radius:999px;
+      font-size:.88rem;font-weight:700;letter-spacing:.02em;
     }
     .eyebrow::before{
-      content:"";
-      width:40px;height:1px;
-      background:linear-gradient(90deg, transparent, var(--gold), transparent);
+      content:"";width:9px;height:9px;border-radius:999px;background:var(--accent);
+      box-shadow:0 0 18px rgba(245,196,0,.7);
     }
-    .title{
-      font-family:"Cormorant Garamond", serif;
-      font-size:clamp(2.4rem, 5vw, 4.8rem);
-      line-height:.95;
-      letter-spacing:-.02em;
-      margin-top:16px;
-      color:#fff8ec;
-    }
-    .title-sm{
-      font-family:"Cormorant Garamond", serif;
-      font-size:clamp(2rem, 4vw, 3.2rem);
-      line-height:1;
-      color:#fff7e6;
-    }
-    .lead{
-      color:var(--muted);
-      max-width:720px;
-      font-size:1.05rem;
-      margin-top:18px;
-    }
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:34px;flex-wrap:wrap}
+    .section-head h2{font-size:clamp(2rem,4vw,3.35rem);line-height:1.02;max-width:680px}
+    .section-head p{max-width:560px;color:var(--muted)}
 
     .btn{
-      border:none;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:54px;
-      padding:0 22px;
-      border-radius:999px;
-      transition:.25s ease;
-      font-weight:700;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:none;cursor:pointer;font-weight:800;border-radius:999px;
+      padding:15px 22px;transition:.22s ease;white-space:nowrap;
     }
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{
-      background:linear-gradient(135deg, #f0d98f 0%, #d4af37 50%, #b4891f 100%);
-      color:#17130a;
-      box-shadow:0 12px 30px rgba(212,175,55,.18);
-    }
-    .btn-primary:hover{filter:brightness(1.04); transform:translateY(-1px)}
-    .btn-secondary{
-      background:rgba(255,255,255,0.06);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.12);
-      backdrop-filter:blur(8px);
-    }
-    .btn-secondary:hover{background:rgba(255,255,255,0.10)}
-    .btn-dark{
-      background:#0f0f12;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.08);
-    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-strong));color:#111;box-shadow:0 18px 40px rgba(245,196,0,.18)}
+    .btn-secondary{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--line-strong)}
+    .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+    .pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:.9rem;color:#d8d8d8}
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:#f4efe5;
-      border-radius:999px;
-      padding:10px 14px;
-      font-size:.92rem;
-      backdrop-filter:blur(10px);
-    }
-
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      height:var(--header-h);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      background:rgba(10,10,12,.72);
-      backdrop-filter:blur(18px);
+    header{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter:blur(16px);
+      background:rgba(12,13,15,.75);
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
     .nav{
-      height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:78px;gap:20px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
+    .brand{display:flex;align-items:center;gap:14px;font-weight:900;letter-spacing:.01em}
     .brand-mark{
-      width:48px;height:48px;border-radius:50%;
-      background:
-        radial-gradient(circle at 30% 30%, #fff3c7 0%, #e2c25f 26%, #b98a1e 62%, #5e4310 100%);
-      box-shadow:0 8px 22px rgba(212,175,55,.22);
-      position:relative;
-      overflow:hidden;
-      flex:0 0 auto;
+      width:46px;height:46px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#ffe98b);
+      color:#111;display:grid;place-items:center;font-weight:900;
+      box-shadow:0 10px 28px rgba(245,196,0,.22)
     }
-    .brand-mark::after{
-      content:"CT";
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-items:center;
-      color:#170f04;
-      font-family:"Cormorant Garamond", serif;
-      font-weight:700;
-      font-size:1.12rem;
-      letter-spacing:.08em;
-    }
-    .brand-text strong{
-      display:block;
-      font-size:1rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:#fff6de;
-    }
-    .brand-text span{
-      display:block;
-      color:var(--muted);
-      font-size:.82rem;
-      margin-top:2px;
-    }
+    .brand-text strong{display:block;font-size:1rem;line-height:1}
+    .brand-text span{display:block;font-size:.8rem;color:var(--muted);margin-top:4px}
+    .nav-links{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+    .nav-links a{color:#ddd;font-weight:600;font-size:.95rem}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .mobile-toggle{display:none}
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:24px;
-      color:#ddd6c7;
-      font-size:.95rem;
+    .hero{padding:46px 0 36px}
+    .hero-wrap{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;
     }
-    .nav-links a{position:relative}
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;bottom:-8px;
-      width:0;height:1px;
-      background:var(--gold);
-      transition:.25s ease;
-    }
-    .nav-links a:hover::after{width:100%}
-
-    .nav-actions{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .mobile-toggle{
-      display:none;
-      width:46px;height:46px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      font-size:1.2rem;
-    }
-
-    .hero{
-      position:relative;
-      padding:54px 0 32px;
-      overflow:hidden;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      align-items:stretch;
-    }
-    .hero-copy{
-      padding:36px 0 20px;
-    }
-    .hero-copy .lead{
-      margin-bottom:30px;
-      max-width:640px;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:24px;
-    }
-    .hero-points{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .hero-visual{
-      position:relative;
-      min-height:640px;
-      border-radius:32px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
+    .hero-main,.hero-side,.glass-card,.menu-card,.feature-card,.review-card,.faq-item,.contact-card,.cart-box,.order-box,.info-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.028));
+      border:1px solid var(--line);
       box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+    .hero-main{
+      padding:34px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.6)),
-        url('https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      display:flex;
-      align-items:flex-end;
-      justify-content:flex-start;
-      padding:26px;
+        linear-gradient(120deg, rgba(0,0,0,.56), rgba(0,0,0,.18)),
+        radial-gradient(circle at right top, rgba(245,196,0,.16), transparent 30%),
+        url('hero-citydoener.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#1f2023,#111214);
+      min-height:620px;display:flex;flex-direction:column;justify-content:space-between;
+      position:relative;overflow:hidden;
+    }
+    .hero-main::after{
+      content:"";position:absolute;inset:auto -60px -60px auto;width:240px;height:240px;border-radius:50%;
+      background:radial-gradient(circle, rgba(245,196,0,.18), transparent 70%);
+      filter:blur(8px);
+    }
+    .hero-badges,.hero-stats,.delivery-points{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-copy{max-width:740px;position:relative;z-index:1}
+    .hero-copy h1{font-size:clamp(2.7rem,6vw,5.6rem);line-height:.94;margin:18px 0 16px;letter-spacing:-.04em}
+    .hero-copy p{font-size:1.06rem;color:#e9e9e9;max-width:620px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .hero-stats{margin-top:30px}
+    .stat{
+      min-width:148px;padding:16px 18px;border-radius:18px;
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(10px)
+    }
+    .stat strong{display:block;font-size:1.45rem;line-height:1.05}
+    .stat span{display:block;color:#ddd;margin-top:6px;font-size:.92rem}
+    .hero-side{padding:22px;display:grid;gap:18px}
+    .hero-panel{padding:22px;border-radius:22px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+    .hero-panel h3{font-size:1.25rem;margin-bottom:12px}
+    .order-preview{display:grid;gap:14px}
+    .preview-item,.timeline-step,.contact-row,.cart-row,.summary-row,.option-row,.checkout-grid label,.about-points li,.feature-list li,.hours li{
+      display:flex;justify-content:space-between;gap:14px;align-items:center;
+    }
+    .preview-item,.timeline-step,.cart-row,.summary-row{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+    .preview-item:last-child,.timeline-step:last-child,.cart-row:last-child,.summary-row:last-child{border-bottom:none}
+    .price{font-weight:800;color:var(--accent-strong)}
+    .hero-note{color:var(--muted);font-size:.94rem}
+
+    .logos{padding:18px 0 8px}
+    .logos-wrap{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px
+    }
+    .logo-box{
+      padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);
+      text-align:center;color:#ddd;font-weight:700
     }
 
-    .floating-card{
-      width:min(100%, 410px);
-      background:rgba(20,20,24,.76);
-      backdrop-filter:blur(18px);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:24px;
-      padding:22px;
-      box-shadow:0 20px 60px rgba(0,0,0,.34);
+    .features-grid,.reviews-grid,.faq-grid,.contact-grid,.about-grid,.service-grid{
+      display:grid;gap:18px
     }
-    .floating-card h3{
-      font-size:1.1rem;
-      margin-bottom:12px;
-      color:#fff3d4;
-    }
-    .floating-meta{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:16px;
-    }
-    .mini-stat{
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      border-radius:18px;
-      padding:14px;
-    }
-    .mini-stat strong{
-      display:block;
-      color:#fff;
-      font-size:1rem;
-      margin-bottom:4px;
-    }
-    .mini-stat span{
-      color:var(--muted);
-      font-size:.92rem;
-    }
-
-    .trust-bar{
-      margin-top:20px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
-    .trust-item{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:18px 16px;
-      text-align:center;
-      backdrop-filter:blur(10px);
-    }
-    .trust-item strong{
-      display:block;
-      color:#fff8ea;
-      font-size:1rem;
-      margin-bottom:4px;
-    }
-    .trust-item span{color:var(--muted); font-size:.93rem}
-
-    .order-shell{
-      display:grid;
-      grid-template-columns:1.12fr .88fr;
-      gap:22px;
-      align-items:start;
-    }
-    .panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-
-    .order-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:18px;
-    }
-
-    .segmented{
-      display:inline-flex;
-      background:rgba(255,255,255,.04);
-      padding:6px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      gap:6px;
-      flex-wrap:wrap;
-    }
-    .segmented button{
-      border:none;
-      min-height:44px;
-      padding:0 18px;
-      border-radius:999px;
-      color:#e9e3d7;
-      background:transparent;
-      cursor:pointer;
-      font-weight:700;
-      transition:.2s ease;
-    }
-    .segmented button.active{
-      background:linear-gradient(135deg, #f0d98f, #d4af37);
-      color:#1b1508;
-    }
-
-    .order-form{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin-top:12px;
-    }
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .field label{
-      color:#f7f0df;
-      font-size:.93rem;
-      font-weight:600;
-    }
-    .field input,
-    .field select,
-    .field textarea{
-      width:100%;
-      min-height:54px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.09);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      padding:0 16px;
-      outline:none;
-      transition:.2s ease;
-    }
-    .field textarea{
-      min-height:110px;
-      padding:14px 16px;
-      resize:vertical;
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus{
-      border-color:rgba(212,175,55,.7);
-      box-shadow:0 0 0 4px rgba(212,175,55,.10);
-    }
-    .field.full{grid-column:1/-1}
-
-    .order-note{
-      margin-top:16px;
-      padding:14px 16px;
-      border-radius:16px;
-      background:rgba(212,175,55,.08);
-      border:1px solid rgba(212,175,55,.16);
-      color:#f3e6b3;
-      font-size:.95rem;
-    }
-
-    .summary-card{
-      position:sticky;
-      top:100px;
-    }
-    .summary-list{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      margin:18px 0 12px;
-      min-height:40px;
-    }
-    .summary-row{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .summary-row:last-child{border-bottom:none}
-    .summary-row small{color:var(--muted); display:block; margin-top:4px}
-    .summary-price{font-weight:700; color:#fff7dc}
-
-    .totals{
-      border-top:1px solid rgba(255,255,255,.08);
-      padding-top:16px;
-      margin-top:8px;
-      display:grid;
-      gap:10px;
-    }
-    .total-line{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      color:#d7d1c5;
-    }
-    .total-line strong{
-      color:#fff;
-      font-size:1.12rem;
-    }
-
-    .menu-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:18px;
-      margin-bottom:30px;
-    }
-    .filter-row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .chip{
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      color:#ece6d8;
-      padding:10px 14px;
-      border-radius:999px;
-      cursor:pointer;
-      transition:.2s ease;
-      font-weight:600;
-    }
-    .chip.active,
-    .chip:hover{
-      background:linear-gradient(135deg, rgba(240,217,143,.18), rgba(212,175,55,.16));
-      border-color:rgba(212,175,55,.3);
-      color:#fff7dc;
-    }
-
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-    .dish-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      overflow:hidden;
-      transition:.25s ease;
-      box-shadow:0 10px 30px rgba(0,0,0,.18);
-    }
-    .dish-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(212,175,55,.25);
-      box-shadow:0 24px 44px rgba(0,0,0,.28);
-    }
-    .dish-media{
-      aspect-ratio:1.25/1;
-      position:relative;
-      overflow:hidden;
-    }
-    .dish-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .5s ease;
-    }
-    .dish-card:hover .dish-media img{transform:scale(1.06)}
-    .dish-tags{
-      position:absolute;
-      top:12px;left:12px;
-      display:flex;flex-wrap:wrap;gap:8px;
-    }
-    .dish-tag{
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(10,10,12,.72);
-      color:#fff7e1;
-      border:1px solid rgba(255,255,255,.10);
-      font-size:.8rem;
-      backdrop-filter:blur(10px);
-    }
-    .dish-body{padding:18px}
-    .dish-top{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:start;
-      margin-bottom:8px;
-    }
-    .dish-title{
-      font-size:1.1rem;
-      color:#fff6de;
-      font-weight:800;
-      line-height:1.2;
-    }
-    .dish-desc{
-      color:var(--muted);
-      font-size:.95rem;
-      min-height:50px;
-      margin-bottom:14px;
-    }
-    .dish-bottom{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .price{
-      color:#fff3cc;
-      font-size:1.08rem;
-      font-weight:800;
-    }
-    .add-btn{
-      min-height:44px;
-      padding:0 16px;
-      border-radius:999px;
-      border:1px solid rgba(212,175,55,.24);
-      background:rgba(212,175,55,.10);
-      color:#fff4d3;
-      font-weight:700;
-      cursor:pointer;
-      transition:.2s ease;
-    }
-    .add-btn:hover{
-      background:linear-gradient(135deg, #f0d98f, #d4af37);
-      color:#171109;
-    }
-
-    .story-grid,
-    .delivery-grid,
-    .contact-grid,
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      align-items:stretch;
-    }
-
-    .image-card{
-      min-height:540px;
-      border-radius:30px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.46)),
-        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-    }
-    .story-stack{
-      display:grid;
-      gap:18px;
-    }
-    .info-card{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:22px;
-    }
-    .info-card h3{
-      font-size:1.15rem;
-      color:#fff4d0;
-      margin-bottom:8px;
-    }
-    .info-card p{color:var(--muted)}
-    .icon-list{
-      display:grid;
-      gap:14px;
-      margin-top:20px;
-    }
-    .icon-line{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-    }
+    .features-grid{grid-template-columns:repeat(4,1fr)}
+    .feature-card{padding:24px}
+    .feature-card h3{margin:14px 0 10px;font-size:1.14rem}
+    .feature-card p{color:var(--muted);font-size:.97rem}
     .icon{
-      width:42px;height:42px;border-radius:14px;
-      display:grid;place-items:center;
-      background:rgba(212,175,55,.12);
-      color:#f3df9d;
-      flex:0 0 auto;
-      border:1px solid rgba(212,175,55,.16);
-      font-weight:800;
+      width:54px;height:54px;border-radius:18px;display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(245,196,0,.22), rgba(245,196,0,.08));
+      color:var(--accent-strong);font-size:1.3rem;font-weight:900
     }
 
-    .delivery-cards{
-      display:grid;
-      gap:18px;
-    }
-    .delivery-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:22px;
-    }
-    .delivery-card h3{
-      color:#fff4d0;
-      margin-bottom:8px;
-    }
-    .delivery-card p{color:var(--muted)}
-    .delivery-card ul{
-      margin-top:14px;
-      display:grid;
-      gap:8px;
-      padding-left:18px;
-      color:#e7e0d1;
-    }
-
-    .review-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:28px;
-    }
-    .review{
-      background:rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:22px;
-    }
-    .review-stars{
-      color:#f3d06a;
-      letter-spacing:.08em;
-      margin-bottom:12px;
-    }
-    .review p{
-      color:#ddd7cb;
-      margin-bottom:14px;
-    }
-    .review strong{
-      color:#fff6e1;
-      font-size:.96rem;
-    }
-
-    .contact-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      padding:24px;
-    }
-    .contact-lines{
-      display:grid;
-      gap:14px;
-      margin-top:18px;
-    }
-    .contact-line{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .contact-line:last-child{border-bottom:none}
-    .contact-line span{color:var(--muted)}
-    .contact-line strong{color:#fff2ce; text-align:right}
-
-    .map-card{
-      min-height:420px;
-      border-radius:28px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
+    .about-grid{grid-template-columns:1.05fr .95fr;align-items:center}
+    .about-image{
+      min-height:500px;border-radius:var(--radius);
       background:
-        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.36)),
-        url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      position:relative;
-      box-shadow:var(--shadow);
+        linear-gradient(120deg, rgba(0,0,0,.34), rgba(0,0,0,.08)),
+        url('storefront-citydoener.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#2a2b2f,#111214);
+      border:1px solid var(--line);box-shadow:var(--shadow)
     }
-    .map-overlay{
-      position:absolute;
-      left:24px; right:24px; bottom:24px;
-      background:rgba(18,18,22,.82);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:18px;
-      backdrop-filter:blur(14px);
+    .about-card{padding:30px}
+    .about-card h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.02;margin:18px 0 16px}
+    .about-card p{color:var(--muted)}
+    .about-points{display:grid;gap:14px;list-style:none;margin-top:22px}
+    .about-points li{
+      justify-content:flex-start;align-items:flex-start;padding:14px 16px;border-radius:18px;
+      background:rgba(255,255,255,.03);border:1px solid var(--line)
     }
-
-    footer{
-      padding:34px 0 46px;
-      border-top:1px solid rgba(255,255,255,.06);
-      background:rgba(8,8,10,.52);
-    }
-    .footer-grid{
-      grid-template-columns:1.1fr .9fr;
-      align-items:start;
-    }
-    .footer-copy p{
-      color:var(--muted);
-      max-width:640px;
-      margin-top:12px;
-    }
-    .footer-links{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-    }
-    .footer-box{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:18px;
-    }
-    .footer-box h4{
-      color:#fff5db;
-      margin-bottom:8px;
-    }
-    .footer-box a,
-    .footer-box p{
-      color:var(--muted);
-      font-size:.95rem;
-      display:block;
-      margin-bottom:6px;
+    .about-points b{display:block;margin-bottom:4px}
+    .check{
+      flex:0 0 28px;width:28px;height:28px;border-radius:999px;background:rgba(46,204,113,.12);
+      display:grid;place-items:center;color:var(--success);font-size:.95rem;margin-top:2px
     }
 
-    .cart-fab{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      z-index:60;
-      width:66px;height:66px;
-      border:none;
-      border-radius:50%;
-      background:linear-gradient(135deg, #f0d98f, #d4af37);
-      color:#171109;
-      font-size:1.15rem;
-      font-weight:800;
-      cursor:pointer;
-      box-shadow:0 16px 38px rgba(212,175,55,.22);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    .menu-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+    .tab-btn{
+      padding:12px 16px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.03);color:#ddd;cursor:pointer;font-weight:700
     }
-    .cart-count{
-      position:absolute;
-      top:-4px;right:-4px;
-      width:26px;height:26px;
-      border-radius:50%;
-      background:#111;
-      color:#fff;
-      border:2px solid #e2c161;
-      display:grid;
-      place-items:center;
-      font-size:.75rem;
-      font-weight:800;
+    .tab-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent-strong));color:#111;border-color:transparent}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .menu-card{padding:22px;position:relative;overflow:hidden}
+    .menu-card::after{
+      content:"";position:absolute;top:-50px;right:-50px;width:120px;height:120px;border-radius:50%;
+      background:radial-gradient(circle, rgba(245,196,0,.12), transparent 70%);
     }
+    .menu-top{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:10px}
+    .menu-card h3{font-size:1.22rem;line-height:1.08}
+    .menu-card p{color:var(--muted);font-size:.96rem;min-height:66px}
+    .menu-meta{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}
+    .tag{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:.82rem;color:#d9d9d9}
+    .menu-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .qty-picker{display:flex;align-items:center;gap:8px}
+    .qty-btn{
+      width:36px;height:36px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);color:#fff;cursor:pointer;font-size:1.1rem
+    }
+    .qty-value{min-width:24px;text-align:center;font-weight:800}
 
-    .cart-drawer{
-      position:fixed;
-      top:0;
-      right:-460px;
-      width:min(460px, 100%);
-      height:100dvh;
-      background:#121217;
-      border-left:1px solid rgba(255,255,255,.08);
-      box-shadow:-30px 0 80px rgba(0,0,0,.36);
-      z-index:70;
-      transition:right .28s ease;
-      display:flex;
-      flex-direction:column;
-    }
-    .cart-drawer.open{right:0}
-    .cart-header{
-      padding:22px 20px;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .cart-header h3{
-      color:#fff4d0;
-      font-size:1.18rem;
-    }
-    .cart-close{
-      width:42px;height:42px;
-      border:none;
-      border-radius:50%;
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      cursor:pointer;
-    }
-    .cart-body{
-      padding:18px 20px 0;
-      overflow:auto;
-      flex:1;
-    }
-    .cart-item{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:12px;
-      padding:16px 0;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .cart-item h4{
-      color:#fff7de;
-      font-size:1rem;
-      margin-bottom:4px;
-    }
-    .cart-item small{
-      color:var(--muted);
-      display:block;
-      margin-bottom:8px;
-    }
-    .qty-controls{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:999px;
-      padding:6px;
-      background:rgba(255,255,255,.04);
-    }
-    .qty-controls button{
-      width:32px;height:32px;
-      border:none;
-      border-radius:50%;
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      cursor:pointer;
-    }
-    .cart-footer{
-      padding:20px;
-      border-top:1px solid rgba(255,255,255,.06);
-      background:#111116;
-    }
+    .service-grid{grid-template-columns:repeat(3,1fr)}
+    .info-card{padding:28px}
+    .info-card h3{margin:14px 0 10px;font-size:1.2rem}
+    .info-card p{color:var(--muted)}
+    .feature-list{list-style:none;display:grid;gap:12px;margin-top:16px}
+    .feature-list li{justify-content:flex-start;color:#ddd}
+    .feature-list li::before{content:"•";color:var(--accent);font-size:1.2rem;margin-right:10px}
 
-    .empty-state{
-      color:var(--muted);
-      text-align:center;
-      padding:34px 12px;
+    .order-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:start}
+    .order-box,.cart-box{padding:24px;position:sticky;top:98px}
+    .order-box h3,.cart-box h3{font-size:1.45rem;margin-bottom:12px}
+    .order-box p,.cart-box p{color:var(--muted)}
+    .checkout-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+    .checkout-grid label{display:block}
+    .field,.select,.textarea{
+      width:100%;margin-top:8px;background:rgba(255,255,255,.04);color:#fff;
+      border:1px solid var(--line);border-radius:16px;padding:14px 16px;outline:none;
     }
-    .small-note{
-      color:var(--muted);
-      font-size:.88rem;
-      margin-top:10px;
+    .field:focus,.select:focus,.textarea:focus{border-color:rgba(245,196,0,.5);box-shadow:0 0 0 4px rgba(245,196,0,.08)}
+    .textarea{min-height:112px;resize:vertical}
+    .checkout-grid .full{grid-column:1/-1}
+    .option-group{display:grid;gap:12px;margin-top:16px}
+    .option-row{
+      justify-content:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:18px;
+      background:rgba(255,255,255,.03);cursor:pointer
     }
+    .option-row input{accent-color:var(--accent)}
+    .summary{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
+    .summary-row strong{font-size:1.1rem}
+    .summary-row.total{padding-top:18px;margin-top:6px;border-top:1px solid var(--line-strong)}
+    .summary-row.total strong,.summary-row.total span{font-size:1.25rem}
+    .cart-empty{
+      padding:18px;border:1px dashed var(--line-strong);border-radius:18px;color:var(--muted);margin-top:16px
+    }
+    .cart-meta{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}
+    .cart-actions{display:grid;gap:12px;margin-top:18px}
+    .micro{font-size:.88rem;color:var(--muted)}
+    .success-box,.error-box{
+      margin-top:14px;padding:14px 16px;border-radius:16px;font-size:.95rem;display:none
+    }
+    .success-box{background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.26);color:#d2ffe3}
+    .error-box{background:rgba(255,107,87,.12);border:1px solid rgba(255,107,87,.26);color:#ffd5cf}
 
-    .hidden{display:none !important}
+    .reviews-grid{grid-template-columns:repeat(3,1fr)}
+    .review-card{padding:24px}
+    .review-stars{color:var(--accent);letter-spacing:.12em;font-size:1.05rem;margin-bottom:12px}
+    .review-card p{color:#ececec;margin-bottom:18px}
+    .review-author{color:var(--muted);font-weight:700}
+
+    .faq-grid{grid-template-columns:repeat(2,1fr)}
+    .faq-item{padding:22px}
+    .faq-item h3{font-size:1.05rem;margin-bottom:8px}
+    .faq-item p{color:var(--muted)}
+
+    .contact-grid{grid-template-columns:.9fr 1.1fr}
+    .contact-card{padding:28px}
+    .contact-card h3{font-size:1.35rem;margin-bottom:14px}
+    .contact-row{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:flex-start}
+    .contact-row:last-child{border-bottom:none}
+    .contact-row span{color:var(--muted);min-width:110px}
+    .hours{list-style:none;display:grid;gap:10px;margin-top:6px}
+    .map-embed{
+      border-radius:20px;overflow:hidden;min-height:370px;border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(245,196,0,.16), rgba(255,255,255,.04));display:grid;place-items:center;text-align:center;padding:28px
+    }
+    .map-embed p{max-width:420px;color:#f1f1f1}
+
+    footer{padding:24px 0 42px;border-top:1px solid rgba(255,255,255,.06)}
+    .footer-wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+    .footer-wrap p{color:var(--muted)}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;color:#ddd}
+
+    .sticky-order-bar{
+      position:fixed;left:16px;right:16px;bottom:16px;z-index:45;display:none;
+      background:rgba(17,17,17,.92);backdrop-filter:blur(14px);border:1px solid var(--line-strong);
+      border-radius:22px;padding:14px;box-shadow:0 22px 50px rgba(0,0,0,.35)
+    }
+    .sticky-order-inner{display:flex;justify-content:space-between;gap:14px;align-items:center}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease, transform .55s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
 
     @media (max-width: 1120px){
-      .hero-grid,
-      .order-shell,
-      .story-grid,
-      .delivery-grid,
-      .contact-grid,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-      .menu-grid,
-      .review-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-      .hero-visual{min-height:520px}
-      .summary-card{position:static}
-      .trust-bar{grid-template-columns:repeat(2,1fr)}
+      .hero-wrap,.about-grid,.order-layout,.contact-grid{grid-template-columns:1fr}
+      .features-grid,.service-grid,.reviews-grid,.menu-grid,.faq-grid,.logos-wrap{grid-template-columns:repeat(2,1fr)}
+      .order-box,.cart-box{position:static}
     }
-
-    @media (max-width: 820px){
-      :root{--header-h:76px}
-      .nav-links,
-      .nav-actions .btn-secondary{
-        display:none;
-      }
-      .mobile-toggle{display:grid; place-items:center}
-      .menu-grid,
-      .review-grid,
-      .trust-bar,
-      .order-form{
-        grid-template-columns:1fr;
-      }
-      .menu-head{
-        flex-direction:column;
-        align-items:start;
-      }
-      .filter-row{justify-content:flex-start}
-      .hero{
-        padding-top:30px;
-      }
-      .hero-copy{padding-top:0}
-      .hero-visual{min-height:440px}
-      .title{font-size:clamp(2.2rem, 12vw, 4rem)}
-      .section{padding:74px 0}
-    }
-
-    @media (max-width: 560px){
-      .container{width:min(var(--max), calc(100% - 20px))}
-      .panel,
-      .contact-card,
-      .delivery-card,
-      .info-card,
-      .review{
-        border-radius:22px;
-        padding:18px;
-      }
-      .hero-visual,
-      .image-card,
-      .map-card{
-        border-radius:24px;
-      }
-      .floating-card{
-        padding:18px;
-        border-radius:20px;
-      }
-      .cart-fab{
-        width:60px;height:60px;
-      }
+    @media (max-width: 780px){
+      .nav-links{display:none}
+      .mobile-toggle{display:inline-flex}
+      .hero-main{min-height:unset;padding:26px}
+      .hero-copy h1{font-size:clamp(2.3rem,10vw,4rem)}
+      .features-grid,.service-grid,.reviews-grid,.menu-grid,.faq-grid,.logos-wrap,.checkout-grid{grid-template-columns:1fr}
+      .section{padding:72px 0}
+      .sticky-order-bar{display:block}
+      .nav-actions .btn-secondary{display:none}
     }
   </style>
 </head>
 <body>
-
-  <header class="site-header">
+  <header>
     <div class="container nav">
-      <a href="#top" class="brand" aria-label="Chang Thai Köln">
-        <div class="brand-mark"></div>
+      <a href="#top" class="brand" aria-label="City Döner Frechen Startseite">
+        <div class="brand-mark">CD</div>
         <div class="brand-text">
-          <strong>Chang Thai</strong>
-          <span>Köln · Delivery & Pickup</span>
+          <strong>City Döner Frechen</strong>
+          <span>Modern. Frisch. Direkt bestellt.</span>
         </div>
       </a>
 
       <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="#menu">Speisekarte</a>
-        <a href="#order">Bestellen</a>
         <a href="#about">Über uns</a>
-        <a href="#delivery">Lieferung</a>
+        <a href="#menu">Speisekarte</a>
+        <a href="#system">Bestellsystem</a>
+        <a href="#reviews">Bewertungen</a>
         <a href="#contact">Kontakt</a>
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-secondary" href="tel:+492211234567">Anrufen</a>
-        <a class="btn btn-primary" href="#order">Jetzt bestellen</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen">☰</button>
+        <a class="btn btn-secondary" href="tel:+492234000000">Jetzt anrufen</a>
+        <a class="btn btn-primary" href="#system">Jetzt bestellen</a>
+        <button class="btn btn-ghost mobile-toggle" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Menü</button>
       </div>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Modern Thai Dining · Köln</div>
-          <h1 class="title">Authentische Thai-Küche.<br>Elegant inszeniert.<br>Sofort bestellbar.</h1>
-          <p class="lead">
-            Eine Premium-Website für Delivery und Abholung: hochwertiges Design, klare Bestelllogik,
-            digitale Speisekarte, schnelle Conversion und ein Look, der nach echter Marke statt
-            nach Standard-Lieferdienst wirkt.
-          </p>
+      <div class="container hero-wrap">
+        <div class="hero-main reveal">
+          <div>
+            <div class="hero-badges">
+              <span class="eyebrow">Eigenes Bestellsystem statt Lieferplattform</span>
+              <span class="pill">Abholung & Lieferung</span>
+              <span class="pill">Frisch zubereitet</span>
+            </div>
 
-          <div class="hero-actions">
-            <a href="#order" class="btn btn-primary">Lieferung oder Abholung wählen</a>
-            <a href="#menu" class="btn btn-secondary">Speisekarte ansehen</a>
+            <div class="hero-copy">
+              <h1>Dein Döner.<br>Direkt bei City Döner Frechen bestellt.</h1>
+              <p>
+                Inspiriert von der starken, modernen Wirkung großer Döner-Marken – aber mit deinem eigenen System:
+                keine Umwege über Drittanbieter, keine fremde App, keine externe Plattform. Kunden bestellen direkt auf deiner Website.
+              </p>
+
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="#system">Eigene Bestellung starten</a>
+                <a class="btn btn-secondary" href="#menu">Speisekarte ansehen</a>
+              </div>
+
+              <div class="hero-stats">
+                <div class="stat">
+                  <strong>15–25 Min.</strong>
+                  <span>Abholzeit im Schnitt</span>
+                </div>
+                <div class="stat">
+                  <strong>4,8 / 5</strong>
+                  <span>Ziel für Kundenerlebnis</span>
+                </div>
+                <div class="stat">
+                  <strong>100%</strong>
+                  <span>Direkte Bestellungen</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-points">
-            <div class="badge">⚡ Schnelle Online-Bestellung</div>
-            <div class="badge">🕒 Vorbestellung möglich</div>
-            <div class="badge">🥡 Lieferung & Abholung</div>
-          </div>
-
-          <div class="trust-bar">
-            <div class="trust-item">
-              <strong>Premium Look</strong>
-              <span>Elegant, modern, hochwertig</span>
-            </div>
-            <div class="trust-item">
-              <strong>Mobile First</strong>
-              <span>Perfekt für iPhone & Android</span>
-            </div>
-            <div class="trust-item">
-              <strong>Bestellfokus</strong>
-              <span>Weniger Klicks, mehr Umsatz</span>
-            </div>
-            <div class="trust-item">
-              <strong>GitHub Ready</strong>
-              <span>Als statische Seite deploybar</span>
-            </div>
+          <div class="delivery-points">
+            <span class="pill">Döner</span>
+            <span class="pill">Dürüm</span>
+            <span class="pill">Teller</span>
+            <span class="pill">Pommes</span>
+            <span class="pill">Vegetarisch</span>
+            <span class="pill">Family Deals</span>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="floating-card">
-            <h3>Heute besonders gefragt</h3>
-            <p style="color:var(--muted);">
-              Pad Thai, grünes Curry und knusprige Frühlingsrollen. Deine Gäste sollen in
-              Sekunden verstehen, was sie bestellen können und warum dein Laden Qualität hat.
-            </p>
+        <aside class="hero-side reveal">
+          <div class="hero-panel">
+            <h3>Beliebte Bestellung</h3>
+            <div class="order-preview">
+              <div class="preview-item"><span>Chicken Döner Deluxe</span><strong class="price">8,90 €</strong></div>
+              <div class="preview-item"><span>Pommes mit Sauce</span><strong class="price">3,80 €</strong></div>
+              <div class="preview-item"><span>Cola 0,33l</span><strong class="price">2,50 €</strong></div>
+            </div>
+            <p class="hero-note" style="margin-top:10px;">Perfekt für einen schnellen Feierabend-Orderflow mit hohem Warenkorbwert.</p>
+          </div>
 
-            <div class="floating-meta">
-              <div class="mini-stat">
-                <strong>25–40 Min.</strong>
-                <span>voraussichtliche Lieferung</span>
-              </div>
-              <div class="mini-stat">
-                <strong>ab 18 Min.</strong>
-                <span>Abholung möglich</span>
-              </div>
-              <div class="mini-stat">
-                <strong>4,9/5</strong>
-                <span>Premium-Gastro-Feeling</span>
-              </div>
-              <div class="mini-stat">
-                <strong>100%</strong>
-                <span>klarer Bestellflow</span>
-              </div>
+          <div class="hero-panel">
+            <h3>So läuft das eigene System</h3>
+            <div class="order-preview">
+              <div class="timeline-step"><span>1. Produkte auswählen</span><span class="pill">Menü</span></div>
+              <div class="timeline-step"><span>2. Lieferart festlegen</span><span class="pill">Pickup / Delivery</span></div>
+              <div class="timeline-step"><span>3. Daten senden</span><span class="pill">Direkt an Shop</span></div>
             </div>
           </div>
+
+          <div class="hero-panel">
+            <h3>Für deinen Live-Einsatz</h3>
+            <p class="hero-note">
+              Dieses Single-File-Frontend enthält bereits Warenkorb, Bestellformular, Summenberechnung und Übergabe an eine API.
+              Wenn noch kein Server angeschlossen ist, nutzt die Seite automatisch eine WhatsApp-Fallback-Bestellung.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="logos">
+      <div class="container logos-wrap reveal">
+        <div class="logo-box">Eigene Marke</div>
+        <div class="logo-box">Eigene Kundendaten</div>
+        <div class="logo-box">Eigener Checkout</div>
+        <div class="logo-box">Mehr Marge pro Bestellung</div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Professioneller Markenauftritt</span>
+            <h2>Wie Haus-des-Döners-Style – aber als eigene City-Döner-Marke</h2>
+          </div>
+          <p>
+            Klare Struktur, starke Hero-Fläche, moderne Produktkarten, schnelle Conversion und ein direktes Bestellsystem auf deiner eigenen Seite.
+            Genau darauf ist diese HTML aufgebaut.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="icon">01</div>
+            <h3>Starke Startseite</h3>
+            <p>Großes Hero-Design mit markantem Look, klarer Bestellführung und aufmerksamkeitsstarken CTA-Buttons.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon">02</div>
+            <h3>Eigener Orderflow</h3>
+            <p>Kunden stellen die Bestellung direkt bei dir zusammen – ohne Lieferando oder Uber Eats als primären Funnel.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon">03</div>
+            <h3>Mobile Conversion</h3>
+            <p>Optimiert für Smartphone-Nutzung mit Sticky-Order-Bar, einfacher Produktwahl und schneller Checkout-Sektion.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon">04</div>
+            <h3>Einfach erweiterbar</h3>
+            <p>Preise, Bilder, Liefergebiet, Öffnungszeiten und API-Anbindung kannst du später problemlos weiter ausbauen.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="order">
-      <div class="container">
-        <div class="eyebrow">Order Experience</div>
-        <div class="menu-head">
-          <div>
-            <h2 class="title-sm">Lieferung oder Abholung in einem sauberen Flow</h2>
-            <p class="lead" style="margin-top:14px;">
-              Direkt am Einstieg auswählen, Adresse angeben, Wunschzeit setzen und dann ohne Chaos ins Menü.
-            </p>
-          </div>
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-card glass-card reveal">
+          <span class="eyebrow">Über City Döner Frechen</span>
+          <h2>Modernes Streetfood-Erlebnis für Frechen – direkt aus deiner eigenen Website.</h2>
+          <p>
+            Die Seite ist so aufgebaut, dass sie Vertrauen, Hunger und Bestellbereitschaft erzeugt. Statt Kunden an externe Plattformen zu verlieren,
+            bleibt der komplette erste Eindruck bei City Döner Frechen: Marke, Speisekarte, Warenkorb und Bestellung.
+          </p>
+
+          <ul class="about-points">
+            <li>
+              <div class="check">✓</div>
+              <div>
+                <b>Klare Positionierung</b>
+                Premium-Döner-Optik mit markanten Gelb-Schwarz-Kontrasten und moderner Typografie.
+              </div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div>
+                <b>Direkte Bestellabwicklung</b>
+                Kunden können Produkte wählen, Lieferart definieren und ihre Daten ohne Plattform-Wechsel absenden.
+              </div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div>
+                <b>Conversion-orientierter Aufbau</b>
+                Hero, Social Proof, Produktkacheln, Bestellsystem und Kontakt sind in einer logischen Reihenfolge platziert.
+              </div>
+            </li>
+          </ul>
         </div>
 
-        <div class="order-shell">
-          <div class="panel">
-            <div class="order-top">
-              <div>
-                <h3 style="font-size:1.25rem;color:#fff5db;">Bestellart wählen</h3>
-                <p style="color:var(--muted);margin-top:6px;">Optimiert für schnelle Entscheidungen und mobile Nutzung.</p>
-              </div>
-              <div class="segmented" id="modeSwitch">
-                <button class="active" data-mode="delivery" type="button">Lieferung</button>
-                <button data-mode="pickup" type="button">Abholung</button>
-              </div>
+        <div class="about-image reveal" aria-label="Platzhalter für Ladenfoto von City Döner Frechen"></div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Speisekarte</span>
+            <h2>Produkte, die direkt in den Warenkorb gehen</h2>
+          </div>
+          <p>
+            Beispielhafte Karte für einen professionellen Launch. Preise und Produkte kannst du später 1:1 austauschen.
+          </p>
+        </div>
+
+        <div class="menu-tabs reveal">
+          <button class="tab-btn active" data-filter="all">Alle</button>
+          <button class="tab-btn" data-filter="doener">Döner</button>
+          <button class="tab-btn" data-filter="dueruem">Dürüm</button>
+          <button class="tab-btn" data-filter="teller">Teller</button>
+          <button class="tab-btn" data-filter="extras">Extras</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <article class="menu-card reveal" data-category="doener">
+            <div class="menu-top"><h3>Classic Döner</h3><span class="price">7,50 €</span></div>
+            <p>Saftiges Fleisch, frischer Salat, Tomaten, Zwiebeln und hausgemachte Sauce im knusprigen Fladenbrot.</p>
+            <div class="menu-meta"><span class="tag">Bestseller</span><span class="tag">Frisch belegt</span></div>
+            <div class="menu-actions">
+              <div class="qty-picker"><button class="qty-btn" onclick="changeTempQty(this,-1)">−</button><span class="qty-value">1</span><button class="qty-btn" onclick="changeTempQty(this,1)">+</button></div>
+              <button class="btn btn-primary" onclick="addFromCard(this,'Classic Döner',7.5)">Hinzufügen</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-category="doener">
+            <div class="menu-top"><h3>Chicken Döner Deluxe</h3><span class="price">8,90 €</span></div>
+            <p>Mit Hähnchenfleisch, extra Sauce, Käse und knackigem Gemüse für den Premium-Biss.</p>
+            <div class="menu-meta"><span class="tag">Premium</span><span class="tag">Mit Käse</span></div>
+            <div class="menu-actions">
+              <div class="qty-picker"><button class="qty-btn" onclick="changeTempQty(this,-1)">−</button><span class="qty-value">1</span><button class="qty-btn" onclick="changeTempQty(this,1)">+</button></div>
+              <button class="btn btn-primary" onclick="addFromCard(this,'Chicken Döner Deluxe',8.9)">Hinzufügen</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-category="dueruem">
+            <div class="menu-top"><h3>Dürüm Spezial</h3><span class="price">8,20 €</span></div>
+            <p>Dünnes Fladenbrot, frisch gerollt mit Fleisch, Salatmix und würziger Spezialsoße.</p>
+            <div class="menu-meta"><span class="tag">To-Go</span><span class="tag">Handgerollt</span></div>
+            <div class="menu-actions">
+              <div class="qty-picker"><button class="qty-btn" onclick="changeTempQty(this,-1)">−</button><span class="qty-value">1</span><button class="qty-btn" onclick="changeTempQty(this,1)">+</button></div>
+              <button class="btn btn-primary" onclick="addFromCard(this,'Dürüm Spezial',8.2)">Hinzufügen</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-category="teller">
+            <div class="menu-top"><h3>Dönerteller Classic</h3><span class="price">12,50 €</span></div>
+            <p>Mit Fleisch, Pommes oder Reis, Salat und Sauce – die starke Option für richtig Hunger.</p>
+            <div class="menu-meta"><span class="tag">Große Portion</span><span class="tag">Sättigend</span></div>
+            <div class="menu-actions">
+              <div class="qty-picker"><button class="qty-btn" onclick="changeTempQty(this,-1)">−</button><span class="qty-value">1</span><button class="qty-btn" onclick="changeTempQty(this,1)">+</button></div>
+              <button class="btn btn-primary" onclick="addFromCard(this,'Dönerteller Classic',12.5)">Hinzufügen</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-category="teller">
+            <div class="menu-top"><h3>Falafel Teller</h3><span class="price">11,50 €</span></div>
+            <p>Vegetarische Alternative mit Falafel, Salat, Beilage und cremigem Dip.</p>
+            <div class="menu-meta"><span class="tag">Vegetarisch</span><span class="tag">Frisch</span></div>
+            <div class="menu-actions">
+              <div class="qty-picker"><button class="qty-btn" onclick="changeTempQty(this,-1)">−</button><span class="qty-value">1</span><button class="qty-btn" onclick="changeTempQty(this,1)">+</button></div>
+              <button class="btn btn-primary" onclick="addFromCard(this,'Falafel Teller',11.5)">Hinzufügen</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-category="extras">
+            <div class="menu-top"><h3>Pommes + Sauce</h3><span class="price">3,80 €</span></div>
+            <p>Knusprige Pommes als perfekte Beilage – wahlweise mit Ketchup, Mayo oder Spezialsoße.</p>
+            <div class="menu-meta"><span class="tag">Extra</span><span class="tag">Immer passend</span></div>
+            <div class="menu-actions">
+              <div class="qty-picker"><button class="qty-btn" onclick="changeTempQty(this,-1)">−</button><span class="qty-value">1</span><button class="qty-btn" onclick="changeTempQty(this,1)">+</button></div>
+              <button class="btn btn-primary" onclick="addFromCard(this,'Pommes + Sauce',3.8)">Hinzufügen</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="system">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Eigenes Bestellsystem</span>
+            <h2>Bestellung direkt an City Döner Frechen senden</h2>
+          </div>
+          <p>
+            Die Logik ist bereits drin: Warenkorb, Lieferart, Gebühren, Mindestbestellwert, Kundendaten und API-Übergabe.
+            Für den Live-Betrieb musst du nur noch deine echten Shop-Daten einsetzen.
+          </p>
+        </div>
+
+        <div class="order-layout">
+          <div class="order-box reveal">
+            <h3>Kundendaten & Lieferung</h3>
+            <p>Wähle Abholung oder Lieferung. Bei Lieferung wird automatisch eine Liefergebühr berechnet.</p>
+
+            <div class="option-group">
+              <label class="option-row"><input type="radio" name="orderType" value="pickup" checked> <strong>Abholung</strong> <span class="micro">Bereit in ca. 15–25 Minuten</span></label>
+              <label class="option-row"><input type="radio" name="orderType" value="delivery"> <strong>Lieferung</strong> <span class="micro">Innerhalb Frechen – zzgl. 2,90 €</span></label>
             </div>
 
-            <form class="order-form" id="orderForm">
-              <div class="field">
-                <label for="customerName">Name</label>
-                <input id="customerName" type="text" placeholder="Max Mustermann" />
-              </div>
-
-              <div class="field">
-                <label for="customerPhone">Telefon</label>
-                <input id="customerPhone" type="tel" placeholder="+49..." />
-              </div>
-
-              <div class="field full" id="addressField">
-                <label for="customerAddress">Lieferadresse</label>
-                <input id="customerAddress" type="text" placeholder="Straße, Hausnummer, PLZ, Ort" />
-              </div>
-
-              <div class="field">
-                <label for="timeSlot">Zeit</label>
-                <select id="timeSlot">
-                  <option value="sofort">So schnell wie möglich</option>
-                  <option value="18:15">18:15 Uhr</option>
-                  <option value="18:30">18:30 Uhr</option>
-                  <option value="18:45">18:45 Uhr</option>
-                  <option value="19:00">19:00 Uhr</option>
-                  <option value="19:15">19:15 Uhr</option>
-                  <option value="19:30">19:30 Uhr</option>
-                  <option value="20:00">20:00 Uhr</option>
-                  <option value="20:30">20:30 Uhr</option>
+            <div class="checkout-grid">
+              <label>
+                Name
+                <input class="field" id="customerName" type="text" placeholder="Max Mustermann" />
+              </label>
+              <label>
+                Telefon
+                <input class="field" id="customerPhone" type="tel" placeholder="0176 12345678" />
+              </label>
+              <label class="full">
+                E-Mail
+                <input class="field" id="customerEmail" type="email" placeholder="max@email.de" />
+              </label>
+              <label class="full address-wrap" id="addressField" style="display:none;">
+                Lieferadresse
+                <input class="field" id="customerAddress" type="text" placeholder="Straße, Hausnummer, PLZ, Ort" />
+              </label>
+              <label>
+                Gewünschte Uhrzeit
+                <select class="select" id="pickupTime">
+                  <option>Schnellstmöglich</option>
+                  <option>In 15 Minuten</option>
+                  <option>In 30 Minuten</option>
+                  <option>In 45 Minuten</option>
+                  <option>In 60 Minuten</option>
                 </select>
-              </div>
-
-              <div class="field">
-                <label for="paymentMethod">Zahlung</label>
-                <select id="paymentMethod">
-                  <option value="Barzahlung">Barzahlung</option>
-                  <option value="EC bei Lieferung">EC bei Lieferung</option>
-                  <option value="Online (später integrieren)">Online (später integrieren)</option>
+              </label>
+              <label>
+                Zahlungsart
+                <select class="select" id="paymentMethod">
+                  <option>Bar bei Abholung / Lieferung</option>
+                  <option>Kartenzahlung vor Ort</option>
+                  <option>Online-Zahlung (später per Backend)</option>
                 </select>
-              </div>
-
-              <div class="field full">
-                <label for="customerNote">Anmerkung</label>
-                <textarea id="customerNote" placeholder="z. B. ohne Koriander, extra scharf, Klingel defekt"></textarea>
-              </div>
-            </form>
-
-            <div class="order-note" id="deliveryNote">
-              Liefergebiet, Mindestbestellwert und echte Online-Zahlung kannst du später mit Backend oder externer Checkout-Lösung erweitern.
+              </label>
+              <label class="full">
+                Anmerkung
+                <textarea class="textarea" id="customerNote" placeholder="z. B. ohne Zwiebeln, extra scharf, Klingel links"></textarea>
+              </label>
             </div>
+
+            <div class="success-box" id="successBox">Bestellung erfolgreich vorbereitet. Wenn keine API verbunden ist, wird gleich die WhatsApp-Bestellung geöffnet.</div>
+            <div class="error-box" id="errorBox">Bitte fülle zuerst Name, Telefonnummer und mindestens ein Produkt im Warenkorb aus.</div>
           </div>
 
-          <aside class="panel summary-card">
-            <div class="eyebrow" style="margin-bottom:8px;">Cart Summary</div>
-            <h3 style="font-size:1.3rem;color:#fff5db;">Dein Warenkorb</h3>
-            <p style="color:var(--muted);margin-top:8px;">
-              Die Bestellung wird unten automatisch als strukturierte Nachricht vorbereitet.
-            </p>
-
-            <div class="summary-list" id="summaryList">
-              <div class="empty-state">Noch nichts im Warenkorb.</div>
+          <aside class="cart-box reveal">
+            <h3>Warenkorb</h3>
+            <p>Direkter Checkout ohne Fremdplattformen.</p>
+            <div class="cart-meta">
+              <span class="pill">Mindestbestellwert Lieferung: 12,00 €</span>
+              <span class="pill">Liefergebühr: 2,90 €</span>
             </div>
 
-            <div class="totals">
-              <div class="total-line">
-                <span>Zwischensumme</span>
-                <span id="subtotal">0,00 €</span>
-              </div>
-              <div class="total-line">
-                <span>Service/Verpackung</span>
-                <span id="serviceFee">1,50 €</span>
-              </div>
-              <div class="total-line">
-                <strong>Gesamt</strong>
-                <strong id="grandTotal">1,50 €</strong>
-              </div>
+            <div id="cartItems"></div>
+            <div class="cart-empty" id="cartEmpty">Noch keine Produkte im Warenkorb. Wähle oben Speisen aus.</div>
+
+            <div class="summary">
+              <div class="summary-row"><span>Zwischensumme</span><strong id="subtotal">0,00 €</strong></div>
+              <div class="summary-row"><span>Liefergebühr</span><strong id="deliveryFee">0,00 €</strong></div>
+              <div class="summary-row total"><span>Gesamt</span><strong id="total">0,00 €</strong></div>
             </div>
 
-            <div style="display:grid; gap:12px; margin-top:20px;">
-              <button class="btn btn-primary" id="checkoutWhatsApp" type="button">Per WhatsApp bestellen</button>
-              <button class="btn btn-secondary" id="openCart" type="button">Warenkorb bearbeiten</button>
-            </div>
-
-            <div class="small-note">
-              Nummer, Öffnungszeiten, Preise und echte Produktdaten kannst du gleich auf dein Restaurant anpassen.
+            <div class="cart-actions">
+              <button class="btn btn-primary" onclick="submitOrder()">Bestellung absenden</button>
+              <button class="btn btn-secondary" onclick="clearCart()">Warenkorb leeren</button>
+              <p class="micro">
+                Backend-Hinweis: Das Script sendet standardmäßig per <code>POST</code> an <code>/api/orders</code>.
+                Wenn dort noch nichts hinterlegt ist, wird automatisch eine WhatsApp-Bestellung geöffnet.
+              </p>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="menu">
+    <section class="section">
       <div class="container">
-        <div class="eyebrow">Signature Menu</div>
-        <div class="menu-head">
+        <div class="section-head reveal">
           <div>
-            <h2 class="title-sm">Eine Speisekarte, die verkauft</h2>
-            <p class="lead" style="margin-top:14px;">
-              Große Bilder, klare Beschreibungen, starke Preisführung und eine direkte Add-to-Cart-Logik.
-            </p>
+            <span class="eyebrow">Service-Vorteile</span>
+            <h2>Warum dieses System für einen Dönerladen funktioniert</h2>
           </div>
-
-          <div class="filter-row" id="categoryFilters">
-            <button class="chip active" data-category="Alle" type="button">Alle</button>
-            <button class="chip" data-category="Vorspeisen" type="button">Vorspeisen</button>
-            <button class="chip" data-category="Curry" type="button">Curry</button>
-            <button class="chip" data-category="Wok" type="button">Wok</button>
-            <button class="chip" data-category="Nudeln" type="button">Nudeln</button>
-            <button class="chip" data-category="Dessert" type="button">Dessert</button>
-          </div>
-        </div>
-
-        <div class="menu-grid" id="menuGrid"></div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container story-grid">
-        <div class="image-card"></div>
-
-        <div class="story-stack">
-          <div>
-            <div class="eyebrow">Brand Story</div>
-            <h2 class="title-sm">Nicht wie ein Baukasten. Sondern wie eine echte Marke.</h2>
-            <p class="lead" style="margin-top:14px;">
-              Genau so muss ein Thai-Restaurant heute digital auftreten: hochwertig, glaubwürdig, appetitlich und direkt auf Umsatz optimiert.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Warum dieses Design funktioniert</h3>
-            <p>
-              Dunkler Premium-Untergrund, warme Goldakzente, elegante Typografie und starke Food-Fotografie
-              erzeugen ein hochwertiges Erlebnis, ohne die Bestellfunktion zu verstecken.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Was diese Seite besser macht</h3>
-            <div class="icon-list">
-              <div class="icon-line">
-                <div class="icon">01</div>
-                <div>
-                  <strong style="display:block;color:#fff7de;">Sofort klare Entscheidung</strong>
-                  <p style="color:var(--muted);">Lieferung oder Abholung wird direkt am Anfang gewählt.</p>
-                </div>
-              </div>
-              <div class="icon-line">
-                <div class="icon">02</div>
-                <div>
-                  <strong style="display:block;color:#fff7de;">Bessere Conversion</strong>
-                  <p style="color:var(--muted);">Weniger Ablenkung, mehr Fokus auf Warenkorb und Checkout.</p>
-                </div>
-              </div>
-              <div class="icon-line">
-                <div class="icon">03</div>
-                <div>
-                  <strong style="display:block;color:#fff7de;">Premium-Wirkung</strong>
-                  <p style="color:var(--muted);">Die Marke sieht teurer, seriöser und deutlich moderner aus.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="#order" class="btn btn-primary">Bestellflow testen</a>
-            <a href="#contact" class="btn btn-secondary">Kontaktbereich</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="delivery">
-      <div class="container delivery-grid">
-        <div>
-          <div class="eyebrow">Delivery & Pickup</div>
-          <h2 class="title-sm">Lieferung und Abholung sauber erklärt</h2>
-          <p class="lead" style="margin-top:14px;">
-            Diese Sektion schafft Vertrauen und beantwortet die wichtigsten Fragen noch vor dem Checkout.
+          <p>
+            Schnell entscheidbar, mobilfreundlich, emotional verkaufsstark und technisch leicht in bestehende Prozesse integrierbar.
           </p>
-
-          <div class="review-grid">
-            <article class="review">
-              <div class="review-stars">★★★★★</div>
-              <p>“Sehr moderne Seite, leicht zu bedienen und die Bestellung ging richtig schnell.”</p>
-              <strong>Beispielbewertung · Delivery</strong>
-            </article>
-            <article class="review">
-              <div class="review-stars">★★★★★</div>
-              <p>“Sieht hochwertig aus und macht direkt Lust zu bestellen. Genau so muss Gastro online wirken.”</p>
-              <strong>Beispielbewertung · Pickup</strong>
-            </article>
-            <article class="review">
-              <div class="review-stars">★★★★★</div>
-              <p>“Übersichtlich, elegant und auf dem Handy viel besser als typische Lieferseiten.”</p>
-              <strong>Beispielbewertung · Mobile User</strong>
-            </article>
-          </div>
         </div>
 
-        <div class="delivery-cards">
-          <div class="delivery-card">
-            <h3>Lieferung</h3>
-            <p>Perfekt für Gäste, die in wenigen Klicks bestellen wollen.</p>
-            <ul>
-              <li>Adresse eingeben</li>
-              <li>Lieferung sofort oder vorbestellen</li>
-              <li>Notiz zur Bestellung hinzufügen</li>
-              <li>WhatsApp-Checkout oder später echter Online-Checkout</li>
+        <div class="service-grid">
+          <article class="info-card reveal">
+            <div class="icon">€</div>
+            <h3>Mehr Kontrolle über Marge</h3>
+            <p>Der Kunde kommt direkt auf deine Website. Dadurch stärkst du deine eigene Marke und reduzierst die Abhängigkeit von Plattformen.</p>
+            <ul class="feature-list">
+              <li>Eigene Preissteuerung</li>
+              <li>Eigene Aktionen und Menüs</li>
+              <li>Eigene Kundenkommunikation</li>
             </ul>
-          </div>
+          </article>
+          <article class="info-card reveal">
+            <div class="icon">⚡</div>
+            <h3>Schnelle Bestelllogik</h3>
+            <p>Die Struktur ist auf schnelle Entscheidungen ausgelegt: Produkte sehen, klicken, Daten eingeben, Bestellung senden.</p>
+            <ul class="feature-list">
+              <li>Mobile Sticky-Order-Bar</li>
+              <li>Einfache Produktkarten</li>
+              <li>Automatische Summen</li>
+            </ul>
+          </article>
+          <article class="info-card reveal">
+            <div class="icon">API</div>
+            <h3>Technisch ausbaufähig</h3>
+            <p>Du kannst später Online-Zahlung, Admin-Dashboard, Küchenmonitor oder Bondrucker-Anbindung ergänzen.</p>
+            <ul class="feature-list">
+              <li>POST-Schnittstelle vorbereitet</li>
+              <li>WhatsApp-Fallback integriert</li>
+              <li>Leicht mit Backend kombinierbar</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <div class="delivery-card">
-            <h3>Abholung</h3>
-            <p>Ideal für Mittagsgeschäft, Laufkundschaft und Vorbestellungen.</p>
-            <ul>
-              <li>Abholzeit auswählen</li>
-              <li>Schneller Prozess ohne unnötige Felder</li>
-              <li>Bestellung vor Ort zahlen oder digital erweitern</li>
-              <li>Hohe Conversion auf Mobilgeräten</li>
-            </ul>
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Social Proof</span>
+            <h2>Vertrauen aufbauen wie eine starke Gastro-Marke</h2>
           </div>
+          <p>
+            Diese Beispiele kannst du später durch echte Google-Bewertungen von City Döner Frechen ersetzen.
+          </p>
+        </div>
 
-          <div class="delivery-card">
-            <h3>Später leicht erweiterbar</h3>
-            <p>Die Struktur ist so gebaut, dass du auf Wunsch danach auch professionell ausbauen kannst.</p>
-            <ul>
-              <li>Stripe / PayPal</li>
-              <li>Firebase / Supabase Backend</li>
-              <li>Admin-Dashboard</li>
-              <li>Live-Status der Bestellung</li>
-            </ul>
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <p>„Die Bestellung über die Website ging super schnell. Kein App-Wechsel, kein Chaos – einfach auswählen und fertig.“</p>
+            <div class="review-author">Aylin K.</div>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <p>„Modernes Design, starke Bilder und die Bestellung war direkt an den Laden. Genau so sollte ein Döner-Shop online aussehen.“</p>
+            <div class="review-author">Mehmet T.</div>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <p>„Mobil richtig angenehm. Dürüm ausgewählt, Adresse rein, abgeschickt. So holt man Kunden auf der Website ab.“</p>
+            <div class="review-author">Laura S.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Wichtige Punkte vor dem Livegang</h2>
           </div>
+          <p>Die HTML funktioniert sofort als Frontend. Für echten Live-Betrieb solltest du die Shop-Daten noch sauber ergänzen.</p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>Ist das schon ein vollständiges Online-Bestellsystem?</h3>
+            <p>Als Frontend ja: Menü, Warenkorb, Summenberechnung und Bestellformular sind enthalten. Für vollautomatischen Live-Betrieb brauchst du zusätzlich ein Backend oder eine Bestell-Schnittstelle.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Kann ich Online-Zahlung ergänzen?</h3>
+            <p>Ja. Du kannst später Stripe, Mollie, PayPal oder einen anderen Zahlungsanbieter per Backend anbinden.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Kann ich echte Produktbilder und echte Preise einsetzen?</h3>
+            <p>Ja. Ersetze einfach die Platzhalterbilder und die Beispielpreise in den Produktkarten. Die Logik übernimmt die Werte automatisch.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Wie bestelle ich ohne API?</h3>
+            <p>Die Seite nutzt als Übergang eine WhatsApp-Fallback-Bestellung. So kannst du direkt starten und später sauber auf ein Backend umstellen.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="contact">
       <div class="container contact-grid">
-        <div class="contact-card">
-          <div class="eyebrow">Location & Info</div>
-          <h2 class="title-sm">Kontakt und Standort</h2>
-          <p class="lead" style="margin-top:14px;">
-            Hier trägst du später die echten Restaurantdaten ein.
-          </p>
+        <div class="contact-card reveal">
+          <span class="eyebrow">Kontakt & Standort</span>
+          <h3>City Döner Frechen</h3>
 
-          <div class="contact-lines">
-            <div class="contact-line">
-              <span>Adresse</span>
-              <strong>Chang Thai Köln<br>Musterstraße 12, 50667 Köln</strong>
-            </div>
-            <div class="contact-line">
-              <span>Telefon</span>
-              <strong><a href="tel:+492211234567">+49 221 1234567</a></strong>
-            </div>
-            <div class="contact-line">
-              <span>E-Mail</span>
-              <strong><a href="mailto:info@changthai.koeln">info@changthai.koeln</a></strong>
-            </div>
-            <div class="contact-line">
-              <span>Öffnungszeiten</span>
-              <strong>Mo–So · 12:00–22:00 Uhr</strong>
-            </div>
-            <div class="contact-line">
-              <span>Liefergebiete</span>
-              <strong>Köln Zentrum · Ehrenfeld · Deutz · Nippes</strong>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
-            <a class="btn btn-primary" href="https://wa.me/492211234567" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn btn-secondary" href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+          <div class="contact-row"><span>Adresse</span><strong>Hauptstraße 00, 50226 Frechen</strong></div>
+          <div class="contact-row"><span>Telefon</span><strong>+49 2234 000000</strong></div>
+          <div class="contact-row"><span>E-Mail</span><strong>info@citydoener-frechen.de</strong></div>
+          <div class="contact-row"><span>Service</span><strong>Abholung & Lieferung</strong></div>
+          <div class="contact-row">
+            <span>Öffnungszeiten</span>
+            <ul class="hours">
+              <li><strong>Mo–Do</strong><span>11:00 – 22:00 Uhr</span></li>
+              <li><strong>Fr–Sa</strong><span>11:00 – 23:00 Uhr</span></li>
+              <li><strong>So</strong><span>12:00 – 22:00 Uhr</span></li>
+            </ul>
           </div>
         </div>
 
-        <div class="map-card">
-          <div class="map-overlay">
-            <strong style="display:block;color:#fff6e1;font-size:1.08rem;">Premium Auftritt + klare Orientierung</strong>
-            <p style="color:var(--muted);margin-top:8px;">
-              Du kannst hier statt des Bildes auch direkt ein eingebettetes Google-Maps-Element verwenden.
-            </p>
+        <div class="contact-card reveal">
+          <div class="map-embed">
+            <div>
+              <h3 style="margin-bottom:12px;">Hier kommt später deine echte Karte rein</h3>
+              <p>
+                Du kannst hier im nächsten Schritt ein Google-Maps-Embed oder eine eigene Kartenlösung einsetzen.
+                Für den Start ist dieser Bereich als professioneller Platzhalter gestaltet.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1385,410 +839,234 @@
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-copy">
-        <div class="brand">
-          <div class="brand-mark"></div>
-          <div class="brand-text">
-            <strong>Chang Thai</strong>
-            <span>Premium Delivery Experience</span>
-          </div>
-        </div>
-        <p>
-          Diese Version ist bewusst so gestaltet, dass sie deutlich hochwertiger wirkt als eine klassische
-          Standard-Lieferseite und sich wie ein Projekt verkauft, das im Bereich 1.500 € und darüber liegen kann.
-        </p>
-      </div>
-
+    <div class="container footer-wrap">
+      <p>© 2026 City Döner Frechen. Alle Rechte vorbehalten.</p>
       <div class="footer-links">
-        <div class="footer-box">
-          <h4>Navigation</h4>
-          <a href="#menu">Speisekarte</a>
-          <a href="#order">Bestellen</a>
-          <a href="#about">Über uns</a>
-          <a href="#contact">Kontakt</a>
-        </div>
-        <div class="footer-box">
-          <h4>Rechtliches</h4>
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-          <a href="#">AGB</a>
-        </div>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#system">Bestellen</a>
       </div>
     </div>
   </footer>
 
-  <button class="cart-fab" id="cartFab" aria-label="Warenkorb öffnen">
-    🛒
-    <span class="cart-count" id="cartCount">0</span>
-  </button>
-
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
-    <div class="cart-header">
-      <h3>Warenkorb</h3>
-      <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">✕</button>
-    </div>
-
-    <div class="cart-body" id="cartBody">
-      <div class="empty-state">Dein Warenkorb ist noch leer.</div>
-    </div>
-
-    <div class="cart-footer">
-      <div class="total-line">
-        <span>Zwischensumme</span>
-        <span id="drawerSubtotal">0,00 €</span>
+  <div class="sticky-order-bar" id="stickyOrderBar">
+    <div class="sticky-order-inner">
+      <div>
+        <strong id="stickyItems">0 Artikel</strong><br>
+        <span class="micro" id="stickyTotal">0,00 € Gesamt</span>
       </div>
-      <div class="total-line" style="margin-top:8px;">
-        <strong>Gesamt</strong>
-        <strong id="drawerGrandTotal">1,50 €</strong>
-      </div>
-
-      <div style="display:grid; gap:10px; margin-top:16px;">
-        <button class="btn btn-primary" id="drawerCheckout" type="button">Per WhatsApp bestellen</button>
-        <button class="btn btn-secondary" id="drawerCloseBtn" type="button">Weiter einkaufen</button>
-      </div>
+      <a href="#system" class="btn btn-primary">Zum Checkout</a>
     </div>
-  </aside>
+  </div>
 
   <script>
-    const menuData = [
-      {
-        id: 1,
-        category: "Vorspeisen",
-        name: "Knusprige Frühlingsrollen",
-        description: "Hausgemachte Frühlingsrollen mit Gemüsefüllung und süß-scharfer Sauce.",
-        price: 5.90,
-        spicy: "Mild",
-        badge: "Beliebt",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 2,
-        category: "Vorspeisen",
-        name: "Saté Hähnchenspieße",
-        description: "Zart gegrillte Spieße mit cremiger Erdnusssauce und Gurkensalat.",
-        price: 7.40,
-        spicy: "Mild",
-        badge: "Signature",
-        image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 3,
-        category: "Curry",
-        name: "Green Curry Chicken",
-        description: "Grünes Thai-Curry mit Hähnchen, Kokosmilch, Gemüse und Jasminreis.",
-        price: 13.90,
-        spicy: "Medium",
-        badge: "Top Seller",
-        image: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 4,
-        category: "Curry",
-        name: "Red Curry Duck",
-        description: "Aromatisches rotes Curry mit knuspriger Ente, Thai-Basilikum und Reis.",
-        price: 16.90,
-        spicy: "Scharf",
-        badge: "Premium",
-        image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 5,
-        category: "Wok",
-        name: "Pad Kra Pao Rind",
-        description: "Wokgericht mit Rindfleisch, Thai-Basilikum, Chili, Knoblauch und Reis.",
-        price: 14.50,
-        spicy: "Scharf",
-        badge: "Wok",
-        image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 6,
-        category: "Nudeln",
-        name: "Pad Thai Garnelen",
-        description: "Gebratene Reisbandnudeln mit Garnelen, Ei, Erdnüssen und Limette.",
-        price: 14.90,
-        spicy: "Medium",
-        badge: "Klassiker",
-        image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 7,
-        category: "Wok",
-        name: "Cashew Chicken",
-        description: "Saftiges Hähnchen mit Gemüse, Cashews und leichter Thai-Wok-Sauce.",
-        price: 13.40,
-        spicy: "Mild",
-        badge: "Empfehlung",
-        image: "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 8,
-        category: "Nudeln",
-        name: "Drunken Noodles Veggie",
-        description: "Breite Reisnudeln mit Gemüse, Sojasprossen und würziger Wok-Würze.",
-        price: 12.90,
-        spicy: "Medium",
-        badge: "Vegetarisch",
-        image: "https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        id: 9,
-        category: "Dessert",
-        name: "Mango Sticky Rice",
-        description: "Klebreis mit frischer Mango, Kokoscreme und geröstetem Sesam.",
-        price: 6.90,
-        spicy: "Sweet",
-        badge: "Dessert",
-        image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=80"
-      }
-    ];
+    const cart = [];
+    const DELIVERY_FEE = 2.9;
+    const DELIVERY_MIN = 12;
+    const whatsappNumber = '4917612345678'; // HIER echte WhatsApp-Nummer eintragen
+    const apiEndpoint = '/api/orders'; // HIER dein echtes Backend hinterlegen
 
-    const menuGrid = document.getElementById("menuGrid");
-    const categoryButtons = document.querySelectorAll("#categoryFilters .chip");
-    const modeButtons = document.querySelectorAll("#modeSwitch button");
-    const addressField = document.getElementById("addressField");
-    const deliveryNote = document.getElementById("deliveryNote");
-
-    const summaryList = document.getElementById("summaryList");
-    const subtotalEl = document.getElementById("subtotal");
-    const grandTotalEl = document.getElementById("grandTotal");
-    const drawerSubtotalEl = document.getElementById("drawerSubtotal");
-    const drawerGrandTotalEl = document.getElementById("drawerGrandTotal");
-    const serviceFeeEl = document.getElementById("serviceFee");
-
-    const cartCountEl = document.getElementById("cartCount");
-    const cartBody = document.getElementById("cartBody");
-    const cartFab = document.getElementById("cartFab");
-    const cartDrawer = document.getElementById("cartDrawer");
-    const cartClose = document.getElementById("cartClose");
-    const drawerCloseBtn = document.getElementById("drawerCloseBtn");
-    const openCartBtn = document.getElementById("openCart");
-
-    const checkoutWhatsApp = document.getElementById("checkoutWhatsApp");
-    const drawerCheckout = document.getElementById("drawerCheckout");
-
-    let currentCategory = "Alle";
-    let orderMode = "delivery";
-    let cart = [];
-
-    const WHATSAPP_NUMBER = "492211234567";
-    const SERVICE_FEE = 1.50;
+    const cartItems = document.getElementById('cartItems');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const subtotalEl = document.getElementById('subtotal');
+    const deliveryFeeEl = document.getElementById('deliveryFee');
+    const totalEl = document.getElementById('total');
+    const stickyItems = document.getElementById('stickyItems');
+    const stickyTotal = document.getElementById('stickyTotal');
+    const successBox = document.getElementById('successBox');
+    const errorBox = document.getElementById('errorBox');
+    const addressField = document.getElementById('addressField');
 
     function euro(value){
-      return value.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+      return value.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
     }
 
-    function renderMenu(){
-      const filtered = currentCategory === "Alle"
-        ? menuData
-        : menuData.filter(item => item.category === currentCategory);
-
-      menuGrid.innerHTML = filtered.map(item => `
-        <article class="dish-card">
-          <div class="dish-media">
-            <img src="${item.image}" alt="${item.name}">
-            <div class="dish-tags">
-              <span class="dish-tag">${item.badge}</span>
-              <span class="dish-tag">${item.spicy}</span>
-            </div>
-          </div>
-          <div class="dish-body">
-            <div class="dish-top">
-              <h3 class="dish-title">${item.name}</h3>
-              <div class="price">${euro(item.price)}</div>
-            </div>
-            <p class="dish-desc">${item.description}</p>
-            <div class="dish-bottom">
-              <span style="color:var(--muted);font-size:.9rem;">${item.category}</span>
-              <button class="add-btn" type="button" data-id="${item.id}">In den Warenkorb</button>
-            </div>
-          </div>
-        </article>
-      `).join("");
-
-      document.querySelectorAll(".add-btn").forEach(btn => {
-        btn.addEventListener("click", () => addToCart(Number(btn.dataset.id)));
-      });
+    function changeTempQty(button, change){
+      const valueEl = button.parentElement.querySelector('.qty-value');
+      let value = Number(valueEl.textContent) || 1;
+      value = Math.max(1, value + change);
+      valueEl.textContent = value;
     }
 
-    function addToCart(id){
-      const product = menuData.find(item => item.id === id);
-      if (!product) return;
-
-      const existing = cart.find(item => item.id === id);
-      if (existing){
-        existing.qty += 1;
+    function addFromCard(button, name, price){
+      const qty = Number(button.parentElement.querySelector('.qty-value').textContent) || 1;
+      const existing = cart.find(item => item.name === name);
+      if(existing){
+        existing.qty += qty;
       } else {
-        cart.push({ ...product, qty: 1 });
+        cart.push({name, price, qty});
       }
-      updateCartUI();
-      openCart();
+      button.parentElement.querySelector('.qty-value').textContent = 1;
+      updateCart();
+      showSuccess('Produkt zum Warenkorb hinzugefügt.');
     }
 
-    function changeQty(id, delta){
-      const target = cart.find(item => item.id === id);
-      if (!target) return;
-      target.qty += delta;
-      if (target.qty <= 0){
-        cart = cart.filter(item => item.id !== id);
+    function updateCart(){
+      cartItems.innerHTML = '';
+      const orderType = document.querySelector('input[name="orderType"]:checked').value;
+
+      if(cart.length === 0){
+        cartEmpty.style.display = 'block';
+      } else {
+        cartEmpty.style.display = 'none';
+        cart.forEach((item, index) => {
+          const row = document.createElement('div');
+          row.className = 'cart-row';
+          row.innerHTML = `
+            <div>
+              <strong>${item.name}</strong>
+              <div class="micro">${euro(item.price)} × ${item.qty}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <button class="qty-btn" onclick="changeCartQty(${index},-1)">−</button>
+              <strong>${item.qty}</strong>
+              <button class="qty-btn" onclick="changeCartQty(${index},1)">+</button>
+              <strong class="price">${euro(item.price * item.qty)}</strong>
+            </div>
+          `;
+          cartItems.appendChild(row);
+        });
       }
-      updateCartUI();
-    }
 
-    function getSubtotal(){
-      return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-    }
-
-    function getGrandTotal(){
-      return getSubtotal() + SERVICE_FEE;
-    }
-
-    function updateCartUI(){
-      const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartCountEl.textContent = itemCount;
-
-      const subtotal = getSubtotal();
-      const grandTotal = getGrandTotal();
+      const subtotal = cart.reduce((sum,item) => sum + item.price * item.qty, 0);
+      const deliveryFee = orderType === 'delivery' && subtotal > 0 ? DELIVERY_FEE : 0;
+      const total = subtotal + deliveryFee;
 
       subtotalEl.textContent = euro(subtotal);
-      drawerSubtotalEl.textContent = euro(subtotal);
-      serviceFeeEl.textContent = euro(SERVICE_FEE);
-      grandTotalEl.textContent = euro(grandTotal);
-      drawerGrandTotalEl.textContent = euro(grandTotal);
+      deliveryFeeEl.textContent = euro(deliveryFee);
+      totalEl.textContent = euro(total);
+      stickyItems.textContent = `${cart.reduce((sum,item)=>sum+item.qty,0)} Artikel`;
+      stickyTotal.textContent = `${euro(total)} Gesamt`;
+    }
 
-      if (cart.length === 0){
-        summaryList.innerHTML = `<div class="empty-state">Noch nichts im Warenkorb.</div>`;
-        cartBody.innerHTML = `<div class="empty-state">Dein Warenkorb ist noch leer.</div>`;
+    function changeCartQty(index, change){
+      cart[index].qty += change;
+      if(cart[index].qty <= 0) cart.splice(index,1);
+      updateCart();
+    }
+
+    function clearCart(){
+      cart.length = 0;
+      updateCart();
+      showSuccess('Warenkorb wurde geleert.');
+    }
+
+    function showSuccess(message){
+      successBox.textContent = message;
+      successBox.style.display = 'block';
+      errorBox.style.display = 'none';
+      clearTimeout(window.successTimeout);
+      window.successTimeout = setTimeout(()=>successBox.style.display='none', 2800);
+    }
+
+    function showError(message){
+      errorBox.textContent = message;
+      errorBox.style.display = 'block';
+      successBox.style.display = 'none';
+      clearTimeout(window.errorTimeout);
+      window.errorTimeout = setTimeout(()=>errorBox.style.display='none', 3400);
+    }
+
+    document.querySelectorAll('input[name="orderType"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const isDelivery = document.querySelector('input[name="orderType"]:checked').value === 'delivery';
+        addressField.style.display = isDelivery ? 'block' : 'none';
+        updateCart();
+      });
+    });
+
+    async function submitOrder(){
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const email = document.getElementById('customerEmail').value.trim();
+      const address = document.getElementById('customerAddress').value.trim();
+      const note = document.getElementById('customerNote').value.trim();
+      const time = document.getElementById('pickupTime').value;
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      const orderType = document.querySelector('input[name="orderType"]:checked').value;
+
+      const subtotal = cart.reduce((sum,item) => sum + item.price * item.qty, 0);
+      const deliveryFee = orderType === 'delivery' && subtotal > 0 ? DELIVERY_FEE : 0;
+      const total = subtotal + deliveryFee;
+
+      if(!name || !phone || cart.length === 0){
+        showError('Bitte Name, Telefonnummer und mindestens ein Produkt angeben.');
         return;
       }
 
-      summaryList.innerHTML = cart.map(item => `
-        <div class="summary-row">
-          <div>
-            <strong style="display:block;color:#fff7de;">${item.qty}× ${item.name}</strong>
-            <small>${euro(item.price)} pro Portion</small>
-          </div>
-          <div class="summary-price">${euro(item.price * item.qty)}</div>
-        </div>
-      `).join("");
-
-      cartBody.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <div>
-            <h4>${item.name}</h4>
-            <small>${euro(item.price)} pro Portion</small>
-            <div class="qty-controls">
-              <button type="button" onclick="changeQty(${item.id}, -1)">−</button>
-              <span style="min-width:20px;text-align:center;">${item.qty}</span>
-              <button type="button" onclick="changeQty(${item.id}, 1)">+</button>
-            </div>
-          </div>
-          <strong style="color:#fff3cc;">${euro(item.price * item.qty)}</strong>
-        </div>
-      `).join("");
-    }
-
-    window.changeQty = changeQty;
-
-    categoryButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        categoryButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        currentCategory = btn.dataset.category;
-        renderMenu();
-      });
-    });
-
-    modeButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        modeButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        orderMode = btn.dataset.mode;
-
-        if (orderMode === "pickup"){
-          addressField.classList.add("hidden");
-          deliveryNote.textContent = "Abholung aktiv: Gäste wählen ihre Wunschzeit und holen die Bestellung direkt im Restaurant ab.";
-        } else {
-          addressField.classList.remove("hidden");
-          deliveryNote.textContent = "Lieferung aktiv: Adresse, Zeitslot und Zahlungsart sorgen für einen klaren Delivery-Flow.";
-        }
-      });
-    });
-
-    function openCart(){
-      cartDrawer.classList.add("open");
-    }
-
-    function closeCart(){
-      cartDrawer.classList.remove("open");
-    }
-
-    cartFab.addEventListener("click", openCart);
-    cartClose.addEventListener("click", closeCart);
-    drawerCloseBtn.addEventListener("click", closeCart);
-    openCartBtn.addEventListener("click", openCart);
-
-    function buildWhatsAppMessage(){
-      const customerName = document.getElementById("customerName").value.trim() || "Nicht angegeben";
-      const customerPhone = document.getElementById("customerPhone").value.trim() || "Nicht angegeben";
-      const customerAddress = document.getElementById("customerAddress").value.trim() || "Nicht angegeben";
-      const timeSlot = document.getElementById("timeSlot").value;
-      const paymentMethod = document.getElementById("paymentMethod").value;
-      const customerNote = document.getElementById("customerNote").value.trim() || "-";
-      const subtotal = getSubtotal();
-      const total = getGrandTotal();
-
-      if (cart.length === 0){
-        alert("Bitte füge zuerst Gerichte zum Warenkorb hinzu.");
-        return null;
+      if(orderType === 'delivery' && !address){
+        showError('Bitte bei Lieferung eine Adresse eingeben.');
+        return;
       }
 
-      const itemsText = cart.map(item =>
-        `- ${item.qty}x ${item.name} (${euro(item.price * item.qty)})`
-      ).join("\n");
+      if(orderType === 'delivery' && subtotal < DELIVERY_MIN){
+        showError(`Für Lieferung gilt ein Mindestbestellwert von ${euro(DELIVERY_MIN)}.`);
+        return;
+      }
 
-      const addressText = orderMode === "delivery"
-        ? `Adresse: ${customerAddress}`
-        : `Abholung im Restaurant`;
+      const payload = {
+        shop: 'City Döner Frechen',
+        createdAt: new Date().toISOString(),
+        customer: { name, phone, email, address },
+        orderType,
+        requestedTime: time,
+        paymentMethod,
+        note,
+        items: cart,
+        pricing: { subtotal, deliveryFee, total }
+      };
 
-      return [
-        "Hallo Chang Thai, ich möchte bestellen:",
-        "",
-        `Bestellart: ${orderMode === "delivery" ? "Lieferung" : "Abholung"}`,
-        `Name: ${customerName}`,
-        `Telefon: ${customerPhone}`,
-        addressText,
-        `Zeit: ${timeSlot}`,
-        `Zahlung: ${paymentMethod}`,
-        "",
-        "Bestellung:",
-        itemsText,
-        "",
-        `Zwischensumme: ${euro(subtotal)}`,
-        `Service/Verpackung: ${euro(SERVICE_FEE)}`,
-        `Gesamt: ${euro(total)}`,
-        "",
-        `Anmerkung: ${customerNote}`
-      ].join("\n");
+      showSuccess('Bestellung wird verarbeitet ...');
+
+      try {
+        const response = await fetch(apiEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if(!response.ok) throw new Error('API nicht erreichbar');
+
+        showSuccess('Bestellung erfolgreich an den Shop übermittelt.');
+        clearCart();
+      } catch (error) {
+        const lines = cart.map(item => `- ${item.qty}x ${item.name} (${euro(item.price * item.qty)})`).join('%0A');
+        const text = `Neue Bestellung für City Döner Frechen%0A%0AName: ${encodeURIComponent(name)}%0ATelefon: ${encodeURIComponent(phone)}%0AE-Mail: ${encodeURIComponent(email || '-')}` +
+          `%0ABestellart: ${encodeURIComponent(orderType === 'pickup' ? 'Abholung' : 'Lieferung')}` +
+          `%0AUhrzeit: ${encodeURIComponent(time)}` +
+          `%0AZahlung: ${encodeURIComponent(paymentMethod)}` +
+          `%0AAdresse: ${encodeURIComponent(address || '-')}` +
+          `%0AAnmerkung: ${encodeURIComponent(note || '-')}` +
+          `%0A%0AProdukte:%0A${lines}` +
+          `%0A%0AZwischensumme: ${encodeURIComponent(euro(subtotal))}` +
+          `%0ALiefergebühr: ${encodeURIComponent(euro(deliveryFee))}` +
+          `%0AGesamt: ${encodeURIComponent(euro(total))}`;
+
+        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+        showSuccess('Keine API gefunden – WhatsApp-Fallback wurde geöffnet.');
+      }
     }
 
-    function goToWhatsApp(){
-      const message = buildWhatsAppMessage();
-      if (!message) return;
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank", "noopener");
-    }
-
-    checkoutWhatsApp.addEventListener("click", goToWhatsApp);
-    drawerCheckout.addEventListener("click", goToWhatsApp);
-
-    document.getElementById("mobileToggle").addEventListener("click", () => {
-      document.getElementById("order").scrollIntoView({ behavior: "smooth" });
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        document.querySelectorAll('#menuGrid .menu-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
     });
 
-    renderMenu();
-    updateCartUI();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    updateCart();
   </script>
 </body>
 </html>

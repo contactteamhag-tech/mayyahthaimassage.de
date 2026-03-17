@@ -223,7 +223,15 @@
       gap:14px;
     }
     .menu-item{
-      background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;gap:10px;height:100%
+      background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;gap:14px;height:100%
+    }
+    .menu-image{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,.06);
+      background:#f8fafc;
     }
     .menu-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
     .menu-top h3{font-size:1.04rem;line-height:1.15}
@@ -321,12 +329,16 @@
     .success{background:rgba(15,159,103,.10);border:1px solid rgba(15,159,103,.22);color:#0b7f52}
     .error{background:rgba(226,75,43,.10);border:1px solid rgba(226,75,43,.22);color:#a5351f}
 
-    .gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:18px}
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
     .gallery-card{
       overflow:hidden;border-radius:24px;min-height:260px;position:relative;border:1px solid var(--line);box-shadow:var(--shadow)
     }
     .gallery-card img{width:100%;height:100%;object-fit:cover}
-    .gallery-card.large{min-height:540px}
+    .gallery-card.large{min-height:260px}
     .gallery-overlay{
       position:absolute;inset:auto 16px 16px 16px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);
       border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:14px 16px
@@ -512,21 +524,21 @@
 
         <div class="highlights-grid">
           <article class="highlight-card reveal">
-            <img src="images/city-doener-2.jpg" alt="Döner von City Döner Frechen" />
+            <img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80" alt="Dönertasche" />
             <h4>Döner Tasche</h4>
             <p>Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und hausgemachter Sauce.</p>
             <strong class="price">7,00 €</strong>
           </article>
 
           <article class="highlight-card reveal">
-            <img src="images/city-doener-3.jpg" alt="Pizza von City Döner Frechen" />
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80" alt="Pizza Döner" />
             <h4>Pizza Döner</h4>
             <p>30 cm Pizza mit Döner Kalb oder Hähnchen – einer der klaren Klassiker auf der Karte.</p>
             <strong class="price">11,50 €</strong>
           </article>
 
           <article class="highlight-card reveal">
-            <img src="images/city-doener-4.jpg" alt="Schnitzel oder Tellergericht von City Döner Frechen" />
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Rahm Schnitzel" />
             <h4>Rahm Schnitzel</h4>
             <p>Mit Hollandaise und Käse überbacken, dazu Salat sowie Pommes oder Reis.</p>
             <strong class="price">14,50 €</strong>
@@ -573,7 +585,7 @@
             <h2 class="headline">Alle Gerichte von City Döner Frechen übersichtlich aufbereitet</h2>
           </div>
           <p>
-            Döner, Lahmacun, Pide, Pizza, Schnitzel und vegetarische Gerichte – mit echter Preisstruktur aus der Speisekarte.
+            Oben bei den Highlights siehst du Beispielbilder aus dem Internet. In der Galerie darunter sind alle Restaurantbilder von City Döner einheitlich gesammelt.
           </p>
         </div>
 
@@ -708,36 +720,60 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Food-Galerie</span>
-            <h2 class="headline">Echte Bilder von City Döner Frechen für einen stärkeren Auftritt</h2>
+            <span class="eyebrow">Restaurant-Galerie</span>
+            <h2 class="headline">Alle echten City Döner Bilder einheitlich gesammelt</h2>
           </div>
           <p>
-            Hier sind echte Laden- und Produktbilder vorgesehen. So wirkt die Seite glaubwürdig, lokal und deutlich hochwertiger.
+            Hier sind alle Restaurantbilder von City Döner Frechen zusammengefasst, damit die Galerie einheitlich, lokal und glaubwürdig wirkt.
           </p>
         </div>
 
         <div class="gallery-grid">
-          <div class="gallery-card large reveal">
-            <img src="images/city-doener-5.jpg" alt="City Döner Frechen Ladenansicht oder Hauptgericht" />
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-1.jpg" alt="City Döner Frechen Bild 1" />
             <div class="gallery-overlay">
               <strong>City Döner Frechen</strong>
-              <span>Direkt aus dem Ladenprofil eingebundene Bildsprache für mehr Vertrauen.</span>
+              <span>Originalbild aus dem Restaurantprofil.</span>
             </div>
           </div>
 
           <div class="gallery-card reveal">
-            <img src="images/city-doener-6.jpg" alt="Döner oder Dürüm von City Döner Frechen" />
+            <img src="images/city-doener-2.jpg" alt="City Döner Frechen Bild 2" />
             <div class="gallery-overlay">
-              <strong>Döner & Dürüm</strong>
-              <span>Die beliebtesten Produkte direkt sichtbar.</span>
+              <strong>Laden & Speisen</strong>
+              <span>Mehr Vertrauen durch echte Eindrücke.</span>
             </div>
           </div>
 
           <div class="gallery-card reveal">
-            <img src="images/city-doener-3.jpg" alt="Pizza oder weitere Speisen von City Döner Frechen" />
+            <img src="images/city-doener-3.jpg" alt="City Döner Frechen Bild 3" />
             <div class="gallery-overlay">
-              <strong>Pizza & weitere Gerichte</strong>
-              <span>Mehr Wiedererkennung durch echte Bilder statt Stockfotos.</span>
+              <strong>Authentischer Eindruck</strong>
+              <span>Echte Bilder statt austauschbarer Stockfotos.</span>
+            </div>
+          </div>
+
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-4.jpg" alt="City Döner Frechen Bild 4" />
+            <div class="gallery-overlay">
+              <strong>Direkt aus Frechen</strong>
+              <span>Lokale Bildsprache für die Website.</span>
+            </div>
+          </div>
+
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-5.jpg" alt="City Döner Frechen Bild 5" />
+            <div class="gallery-overlay">
+              <strong>Mehr Wiedererkennung</strong>
+              <span>Die Marke wirkt sofort echter.</span>
+            </div>
+          </div>
+
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-6.jpg" alt="City Döner Frechen Bild 6" />
+            <div class="gallery-overlay">
+              <strong>Restaurantbilder komplett</strong>
+              <span>Alle City-Döner-Fotos an einer Stelle.</span>
             </div>
           </div>
         </div>
@@ -851,53 +887,397 @@
 
   <script>
     const menuData = [
-      {id:'01', category:'doener', name:'Döner Tasche', price:7.00, desc:'Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und Sauce.', tags:['Bestseller','Halal']},
-      {id:'02', category:'doener', name:'Jumbo Döner', price:9.90, desc:'Große Portion Döner im Fladenbrot.', tags:['Groß','Beliebt']},
-      {id:'03', category:'doener', name:'Döner Dürüm', price:8.50, desc:'Dönerfleisch im Yufka gerollt.', tags:['To-Go']},
-      {id:'04', category:'doener', name:'Pommdöner klein', price:4.00, desc:'Pommes mit Dönerfleisch und Sauce in kleiner Portion.', tags:['Snack']},
-      {id:'05', category:'doener', name:'Pommdöner groß', price:7.50, desc:'Pommes mit Dönerfleisch und Saucen in großer Portion.', tags:['Groß']},
-      {id:'06', category:'doener', name:'Salat Box Dönerfleisch', price:7.00, desc:'Salat mit Dönerfleisch und Sauce.', tags:['Leicht']},
-      {id:'07', category:'doener', name:'Döner Teller', price:12.00, desc:'Dönerfleisch mit Pommes oder Reis und Salat.', tags:['Teller']},
-      {id:'08', category:'doener', name:'Döner Teller komplett', price:15.00, desc:'Dönerfleisch, Pommes, Reis, Salat und Saucen.', tags:['Premium Teller']},
-      {id:'09', category:'doener', name:'Döner Portion (nur Fleisch) klein', price:9.90, desc:'Kleine Portion reines Dönerfleisch.', tags:['Protein']},
-      {id:'10', category:'doener', name:'Döner Portion (nur Fleisch) groß', price:15.00, desc:'Große Portion reines Dönerfleisch.', tags:['Groß']},
+      {
+        id:'01',
+        category:'doener',
+        name:'Döner Tasche',
+        price:7.00,
+        desc:'Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und Sauce.',
+        tags:['Bestseller','Halal'],
+        image:'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'02',
+        category:'doener',
+        name:'Jumbo Döner',
+        price:9.90,
+        desc:'Große Portion Döner im Fladenbrot.',
+        tags:['Groß','Beliebt'],
+        image:'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'03',
+        category:'doener',
+        name:'Döner Dürüm',
+        price:8.50,
+        desc:'Dönerfleisch im Yufka gerollt.',
+        tags:['To-Go'],
+        image:'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'04',
+        category:'doener',
+        name:'Pommdöner klein',
+        price:4.00,
+        desc:'Pommes mit Dönerfleisch und Sauce in kleiner Portion.',
+        tags:['Snack'],
+        image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'05',
+        category:'doener',
+        name:'Pommdöner groß',
+        price:7.50,
+        desc:'Pommes mit Dönerfleisch und Saucen in großer Portion.',
+        tags:['Groß'],
+        image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'06',
+        category:'doener',
+        name:'Salat Box Dönerfleisch',
+        price:7.00,
+        desc:'Salat mit Dönerfleisch und Sauce.',
+        tags:['Leicht'],
+        image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'07',
+        category:'doener',
+        name:'Döner Teller',
+        price:12.00,
+        desc:'Dönerfleisch mit Pommes oder Reis und Salat.',
+        tags:['Teller'],
+        image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'08',
+        category:'doener',
+        name:'Döner Teller komplett',
+        price:15.00,
+        desc:'Dönerfleisch, Pommes, Reis, Salat und Saucen.',
+        tags:['Premium Teller'],
+        image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'09',
+        category:'doener',
+        name:'Döner Portion (nur Fleisch) klein',
+        price:9.90,
+        desc:'Kleine Portion reines Dönerfleisch.',
+        tags:['Protein'],
+        image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'10',
+        category:'doener',
+        name:'Döner Portion (nur Fleisch) groß',
+        price:15.00,
+        desc:'Große Portion reines Dönerfleisch.',
+        tags:['Groß'],
+        image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'
+      },
 
-      {id:'11', category:'lahmacun', name:'Lahmacun', price:3.50, desc:'Türkische Pizza mit Hackfleisch.', tags:['Klassiker']},
-      {id:'12', category:'lahmacun', name:'Lahmacun mit Salat', price:6.00, desc:'Türkische Pizza mit Hackfleisch und frischem Salat.', tags:['Frisch']},
-      {id:'13', category:'lahmacun', name:'Lahmacun mit Dönerfleisch', price:10.00, desc:'Lahmacun mit zusätzlichem Dönerfleisch.', tags:['Beliebt']},
-      {id:'14', category:'lahmacun', name:'Pide Gouda Käse', price:8.50, desc:'Pide mit Gouda Käse.', tags:['Pide']},
-      {id:'15', category:'lahmacun', name:'Pide Weich Käse', price:9.50, desc:'Pide mit Weichkäse.', tags:['Pide']},
-      {id:'16', category:'lahmacun', name:'Pide Hackfleisch', price:10.00, desc:'Pide mit Hackfleisch.', tags:['Pide']},
-      {id:'17', category:'lahmacun', name:'Pide Sucuk & Käse', price:10.00, desc:'Pide mit Sucuk und Käse.', tags:['Pide']},
-      {id:'18', category:'lahmacun', name:'Pide mit Dönerfleisch', price:10.00, desc:'Pide mit Dönerfleisch.', tags:['Pide']},
+      {
+        id:'11',
+        category:'lahmacun',
+        name:'Lahmacun',
+        price:3.50,
+        desc:'Türkische Pizza mit Hackfleisch.',
+        tags:['Klassiker'],
+        image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'12',
+        category:'lahmacun',
+        name:'Lahmacun mit Salat',
+        price:6.00,
+        desc:'Türkische Pizza mit Hackfleisch und frischem Salat.',
+        tags:['Frisch'],
+        image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'13',
+        category:'lahmacun',
+        name:'Lahmacun mit Dönerfleisch',
+        price:10.00,
+        desc:'Lahmacun mit zusätzlichem Dönerfleisch.',
+        tags:['Beliebt'],
+        image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'14',
+        category:'lahmacun',
+        name:'Pide Gouda Käse',
+        price:8.50,
+        desc:'Pide mit Gouda Käse.',
+        tags:['Pide'],
+        image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'15',
+        category:'lahmacun',
+        name:'Pide Weich Käse',
+        price:9.50,
+        desc:'Pide mit Weichkäse.',
+        tags:['Pide'],
+        image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'16',
+        category:'lahmacun',
+        name:'Pide Hackfleisch',
+        price:10.00,
+        desc:'Pide mit Hackfleisch.',
+        tags:['Pide'],
+        image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'17',
+        category:'lahmacun',
+        name:'Pide Sucuk & Käse',
+        price:10.00,
+        desc:'Pide mit Sucuk und Käse.',
+        tags:['Pide'],
+        image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'18',
+        category:'lahmacun',
+        name:'Pide mit Dönerfleisch',
+        price:10.00,
+        desc:'Pide mit Dönerfleisch.',
+        tags:['Pide'],
+        image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'
+      },
 
-      {id:'19', category:'pizza', name:'Pizza Margherita', price:8.00, desc:'30 cm Pizza mit Tomatensauce und Käse.', tags:['30 cm']},
-      {id:'20', category:'pizza', name:'Pizza Zwiebeln', price:9.00, desc:'30 cm Pizza mit Zwiebeln.', tags:['30 cm']},
-      {id:'21', category:'pizza', name:'Pizza Champignons', price:9.50, desc:'30 cm Pizza mit Champignons.', tags:['30 cm']},
-      {id:'22', category:'pizza', name:'Pizza Spinat', price:9.50, desc:'30 cm Pizza mit Spinat.', tags:['30 cm']},
-      {id:'23', category:'pizza', name:'Pizza Salami', price:9.50, desc:'30 cm Pizza mit Salami.', tags:['30 cm']},
-      {id:'24', category:'pizza', name:'Pizza Thunfisch', price:10.00, desc:'30 cm Pizza mit Thunfisch.', tags:['30 cm']},
-      {id:'25', category:'pizza', name:'Pizza Vegetarisch', price:11.00, desc:'30 cm Pizza nach Wahl mit 2 Zutaten.', tags:['30 cm','Veggie']},
-      {id:'26', category:'pizza', name:'Pizza Döner', price:11.50, desc:'30 cm Pizza mit Döner Kalb oder Hähnchen.', tags:['30 cm','Bestseller']},
-      {id:'26a', category:'pizza', name:'Pizza Hollandais', price:14.00, desc:'Hähnchenfleisch, Brokkoli, Mais und Pilze.', tags:['30 cm','Spezial']},
-      {id:'27', category:'pizza', name:'Pizza Hawaii', price:11.50, desc:'30 cm Pizza Hawaii.', tags:['30 cm']},
-      {id:'28', category:'pizza', name:'Pizza Diavola', price:12.00, desc:'30 cm Pizza Diavola.', tags:['30 cm','Scharf']},
-      {id:'29', category:'pizza', name:'Pizza Caprese', price:12.00, desc:'30 cm Pizza Caprese.', tags:['30 cm']},
-      {id:'30', category:'pizza', name:'Pizza 4 Jahreszeiten', price:13.00, desc:'Champignon, Spinat, Schinken und Salami.', tags:['30 cm']},
-      {id:'31', category:'pizza', name:'Pizza Istanbul (Spezial)', price:14.00, desc:'Dönerfleisch, Zwiebel, Peperoni, Oliven und Weichkäse.', tags:['30 cm','Spezial']},
-      {id:'32', category:'pizza', name:'Party Pizza 60×40 cm', price:0.00, desc:'Gouda Käse, jeder weitere Belag 5 Euro.', tags:['Party','Preis auf Anfrage']},
+      {
+        id:'19',
+        category:'pizza',
+        name:'Pizza Margherita',
+        price:8.00,
+        desc:'30 cm Pizza mit Tomatensauce und Käse.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'20',
+        category:'pizza',
+        name:'Pizza Zwiebeln',
+        price:9.00,
+        desc:'30 cm Pizza mit Zwiebeln.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'21',
+        category:'pizza',
+        name:'Pizza Champignons',
+        price:9.50,
+        desc:'30 cm Pizza mit Champignons.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'22',
+        category:'pizza',
+        name:'Pizza Spinat',
+        price:9.50,
+        desc:'30 cm Pizza mit Spinat.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'23',
+        category:'pizza',
+        name:'Pizza Salami',
+        price:9.50,
+        desc:'30 cm Pizza mit Salami.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'24',
+        category:'pizza',
+        name:'Pizza Thunfisch',
+        price:10.00,
+        desc:'30 cm Pizza mit Thunfisch.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'25',
+        category:'pizza',
+        name:'Pizza Vegetarisch',
+        price:11.00,
+        desc:'30 cm Pizza nach Wahl mit 2 Zutaten.',
+        tags:['30 cm','Veggie'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'26',
+        category:'pizza',
+        name:'Pizza Döner',
+        price:11.50,
+        desc:'30 cm Pizza mit Döner Kalb oder Hähnchen.',
+        tags:['30 cm','Bestseller'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'26a',
+        category:'pizza',
+        name:'Pizza Hollandais',
+        price:14.00,
+        desc:'Hähnchenfleisch, Brokkoli, Mais und Pilze.',
+        tags:['30 cm','Spezial'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'27',
+        category:'pizza',
+        name:'Pizza Hawaii',
+        price:11.50,
+        desc:'30 cm Pizza Hawaii.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'28',
+        category:'pizza',
+        name:'Pizza Diavola',
+        price:12.00,
+        desc:'30 cm Pizza Diavola.',
+        tags:['30 cm','Scharf'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'29',
+        category:'pizza',
+        name:'Pizza Caprese',
+        price:12.00,
+        desc:'30 cm Pizza Caprese.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'30',
+        category:'pizza',
+        name:'Pizza 4 Jahreszeiten',
+        price:13.00,
+        desc:'Champignon, Spinat, Schinken und Salami.',
+        tags:['30 cm'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'31',
+        category:'pizza',
+        name:'Pizza Istanbul (Spezial)',
+        price:14.00,
+        desc:'Dönerfleisch, Zwiebel, Peperoni, Oliven und Weichkäse.',
+        tags:['30 cm','Spezial'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'32',
+        category:'pizza',
+        name:'Party Pizza 60×40 cm',
+        price:0.00,
+        desc:'Gouda Käse, jeder weitere Belag 5 Euro.',
+        tags:['Party','Preis auf Anfrage'],
+        image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'
+      },
 
-      {id:'33', category:'schnitzel', name:'Wiener Schnitzel', price:12.00, desc:'Mit Salat und Pommes oder Reis.', tags:['Putenfleisch']},
-      {id:'34', category:'schnitzel', name:'Jäger Schnitzel', price:13.50, desc:'Mit Salat und Pommes oder Reis.', tags:['Putenfleisch']},
-      {id:'35', category:'schnitzel', name:'Paprika Schnitzel', price:14.00, desc:'Mit pikanter Tomatensauce, Salat und Pommes oder Reis.', tags:['Putenfleisch']},
-      {id:'36', category:'schnitzel', name:'Rahm Schnitzel', price:14.50, desc:'Mit Hollandaise und Käse überbacken, dazu Salat und Pommes oder Reis.', tags:['Putenfleisch']},
+      {
+        id:'33',
+        category:'schnitzel',
+        name:'Wiener Schnitzel',
+        price:12.00,
+        desc:'Mit Salat und Pommes oder Reis.',
+        tags:['Putenfleisch'],
+        image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'34',
+        category:'schnitzel',
+        name:'Jäger Schnitzel',
+        price:13.50,
+        desc:'Mit Salat und Pommes oder Reis.',
+        tags:['Putenfleisch'],
+        image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'35',
+        category:'schnitzel',
+        name:'Paprika Schnitzel',
+        price:14.00,
+        desc:'Mit pikanter Tomatensauce, Salat und Pommes oder Reis.',
+        tags:['Putenfleisch'],
+        image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'36',
+        category:'schnitzel',
+        name:'Rahm Schnitzel',
+        price:14.50,
+        desc:'Mit Hollandaise und Käse überbacken, dazu Salat und Pommes oder Reis.',
+        tags:['Putenfleisch'],
+        image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'
+      },
 
-      {id:'37', category:'veggie', name:'Falafel Tasche', price:7.00, desc:'Hausgemacht und täglich frisch.', tags:['Veggie']},
-      {id:'38', category:'veggie', name:'Falafel Dürüm', price:8.00, desc:'Falafel im Yufka gerollt.', tags:['Veggie']},
-      {id:'39', category:'veggie', name:'Falafel Teller', price:11.00, desc:'Falafel Teller als volle Mahlzeit.', tags:['Veggie']},
-      {id:'40', category:'veggie', name:'Halloumi Tasche', price:6.50, desc:'Mit Halloumi im Brot.', tags:['Vegetarisch']},
-      {id:'41', category:'veggie', name:'Halloumi Teller', price:10.00, desc:'Tellergericht mit Halloumi.', tags:['Vegetarisch']},
-      {id:'42', category:'veggie', name:'Halloumi Falafel Teller', price:13.50, desc:'Kombination aus Halloumi und Falafel.', tags:['Vegetarisch','Groß']}
+      {
+        id:'37',
+        category:'veggie',
+        name:'Falafel Tasche',
+        price:7.00,
+        desc:'Hausgemacht und täglich frisch.',
+        tags:['Veggie'],
+        image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'38',
+        category:'veggie',
+        name:'Falafel Dürüm',
+        price:8.00,
+        desc:'Falafel im Yufka gerollt.',
+        tags:['Veggie'],
+        image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'39',
+        category:'veggie',
+        name:'Falafel Teller',
+        price:11.00,
+        desc:'Falafel Teller als volle Mahlzeit.',
+        tags:['Veggie'],
+        image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'40',
+        category:'veggie',
+        name:'Halloumi Tasche',
+        price:6.50,
+        desc:'Mit Halloumi im Brot.',
+        tags:['Vegetarisch'],
+        image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'41',
+        category:'veggie',
+        name:'Halloumi Teller',
+        price:10.00,
+        desc:'Tellergericht mit Halloumi.',
+        tags:['Vegetarisch'],
+        image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'
+      },
+      {
+        id:'42',
+        category:'veggie',
+        name:'Halloumi Falafel Teller',
+        price:13.50,
+        desc:'Kombination aus Halloumi und Falafel.',
+        tags:['Vegetarisch','Groß'],
+        image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'
+      }
     ];
 
     const cart = [];
@@ -951,6 +1331,7 @@
         row.className = 'menu-item';
 
         row.innerHTML = `
+          <img class="menu-image" src="${escapeHtml(item.image || 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80')}" alt="${escapeHtml(item.name)}" />
           <div class="menu-top">
             <div>
               <h3>${escapeHtml(item.id)}. ${escapeHtml(item.name)}</h3>

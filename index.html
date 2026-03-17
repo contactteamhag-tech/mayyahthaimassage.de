@@ -111,10 +111,15 @@
       display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:82px;
     }
     .brand{display:flex;align-items:center;gap:14px}
-    .brand-mark{
-      width:54px;height:54px;border-radius:18px;display:grid;place-items:center;
-      background:linear-gradient(135deg,#1f2937,#0f172a);color:var(--accent-2);
-      font-weight:900;box-shadow:0 12px 30px rgba(15,23,42,.18)
+    .brand-logo{
+      width:54px;
+      height:54px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(15,23,42,.18);
+      border:2px solid rgba(255,255,255,.7);
+      background:#111827;
+      flex:0 0 54px;
     }
     .brand-copy strong{display:block;font-size:1rem;line-height:1}
     .brand-copy span{display:block;color:var(--muted);font-size:.82rem;margin-top:4px}
@@ -131,7 +136,7 @@
       background:
         linear-gradient(120deg, rgba(255,255,255,.88), rgba(255,255,255,.56)),
         radial-gradient(circle at right top, rgba(245,180,0,.20), transparent 28%),
-        url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        url('images/city-hero.jpg') center/cover no-repeat;
     }
     .hero-main::before{
       content:'';position:absolute;inset:auto -80px -80px auto;width:280px;height:280px;border-radius:50%;
@@ -181,7 +186,7 @@
       min-height:560px;border-radius:var(--radius);
       background:
         linear-gradient(135deg, rgba(255,255,255,.28), rgba(255,255,255,.10)),
-        url('https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        url('images/city-doener-1.jpg') center/cover no-repeat;
       border:1px solid var(--line);box-shadow:var(--shadow)
     }
     .story-card{padding:34px}
@@ -392,7 +397,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="City Döner Frechen Startseite">
-        <div class="brand-mark">CD</div>
+        <img class="brand-logo" src="images/logo-citydoener.png" alt="City Döner Frechen Logo" />
         <div class="brand-copy">
           <strong>City Döner Frechen</strong>
           <span>Halal Food · Döner · Pizza · Lahmacun</span>
@@ -435,8 +440,9 @@
             <h1 class="headline">City Döner Frechen.<br>Frisch, klar, direkt bestellbar.</h1>
 
             <p>
-              Döner, Dürüm, Lahmacun, Pide, Pizza, Schnitzel und vegetarische Gerichte –
-              alles sauber aufbereitet in einer modernen, übersichtlichen Website mit direkter Bestellanfrage per WhatsApp.
+              Frischer Döner, Dürüm, Lahmacun, Pide, Pizza, Schnitzel und vegetarische Gerichte
+              in zentraler Lage in Frechen. Schnell auswählen, Preise direkt sehen und die Bestellung
+              bequem per WhatsApp anfragen.
             </p>
 
             <div class="hero-actions">
@@ -506,21 +512,21 @@
 
         <div class="highlights-grid">
           <article class="highlight-card reveal">
-            <img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80" alt="Döner im Brot" />
+            <img src="images/city-doener-2.jpg" alt="Döner von City Döner Frechen" />
             <h4>Döner Tasche</h4>
             <p>Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und hausgemachter Sauce.</p>
             <strong class="price">7,00 €</strong>
           </article>
 
           <article class="highlight-card reveal">
-            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80" alt="Pizza frisch aus dem Ofen" />
+            <img src="images/city-doener-3.jpg" alt="Pizza von City Döner Frechen" />
             <h4>Pizza Döner</h4>
             <p>30 cm Pizza mit Döner Kalb oder Hähnchen – einer der klaren Klassiker auf der Karte.</p>
             <strong class="price">11,50 €</strong>
           </article>
 
           <article class="highlight-card reveal">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Schnitzel mit Pommes" />
+            <img src="images/city-doener-4.jpg" alt="Schnitzel oder Tellergericht von City Döner Frechen" />
             <h4>Rahm Schnitzel</h4>
             <p>Mit Hollandaise und Käse überbacken, dazu Salat sowie Pommes oder Reis.</p>
             <strong class="price">14,50 €</strong>
@@ -567,7 +573,7 @@
             <h2 class="headline">Alle Gerichte von City Döner Frechen übersichtlich aufbereitet</h2>
           </div>
           <p>
-            Döner, Lahmacun, Pide, Pizza, Schnitzel und vegetarische Gerichte – mit echter Preisstruktur aus der eingesendeten Speisekarte.
+            Döner, Lahmacun, Pide, Pizza, Schnitzel und vegetarische Gerichte – mit echter Preisstruktur aus der Speisekarte.
           </p>
         </div>
 
@@ -703,35 +709,35 @@
         <div class="section-head reveal">
           <div>
             <span class="eyebrow">Food-Galerie</span>
-            <h2 class="headline">Starke Bilder für mehr Appetit, Vertrauen und Wiedererkennung</h2>
+            <h2 class="headline">Echte Bilder von City Döner Frechen für einen stärkeren Auftritt</h2>
           </div>
           <p>
-            Für die finale Version können hier echte Fotos von City Döner Frechen, dem Laden und den Gerichten eingebaut werden.
+            Hier sind echte Laden- und Produktbilder vorgesehen. So wirkt die Seite glaubwürdig, lokal und deutlich hochwertiger.
           </p>
         </div>
 
         <div class="gallery-grid">
           <div class="gallery-card large reveal">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1400&q=80" alt="Pizza und Streetfood" />
+            <img src="images/city-doener-5.jpg" alt="City Döner Frechen Ladenansicht oder Hauptgericht" />
             <div class="gallery-overlay">
-              <strong>Pizza & Ofengerichte</strong>
-              <span>Ideal für einen starken ersten Eindruck auf der Startseite.</span>
+              <strong>City Döner Frechen</strong>
+              <span>Direkt aus dem Ladenprofil eingebundene Bildsprache für mehr Vertrauen.</span>
             </div>
           </div>
 
           <div class="gallery-card reveal">
-            <img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80" alt="Döner Brot" />
+            <img src="images/city-doener-6.jpg" alt="Döner oder Dürüm von City Döner Frechen" />
             <div class="gallery-overlay">
               <strong>Döner & Dürüm</strong>
-              <span>Die beliebtesten Produkte sofort sichtbar und hochwertig präsentiert.</span>
+              <span>Die beliebtesten Produkte direkt sichtbar.</span>
             </div>
           </div>
 
           <div class="gallery-card reveal">
-            <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80" alt="Vegetarische Gerichte und Falafel" />
+            <img src="images/city-doener-3.jpg" alt="Pizza oder weitere Speisen von City Döner Frechen" />
             <div class="gallery-overlay">
-              <strong>Veggie / Falafel</strong>
-              <span>Vegetarische Optionen klar und modern eingebunden.</span>
+              <strong>Pizza & weitere Gerichte</strong>
+              <span>Mehr Wiedererkennung durch echte Bilder statt Stockfotos.</span>
             </div>
           </div>
         </div>

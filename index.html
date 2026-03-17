@@ -911,329 +911,345 @@
     </div>
   </div>
 
-  <script>
-    const menuData = [
-      {id:'01', category:'doener', name:'Döner Tasche', price:7.00, desc:'Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und Sauce.', tags:['Bestseller','Halal'], image:'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80'},
-      {id:'02', category:'doener', name:'Jumbo Döner', price:9.90, desc:'Große Portion Döner im Fladenbrot.', tags:['Groß','Beliebt'], image:'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80'},
-      {id:'03', category:'doener', name:'Döner Dürüm', price:8.50, desc:'Dönerfleisch im Yufka gerollt.', tags:['To-Go'], image:'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80'},
-      {id:'04', category:'doener', name:'Pommdöner klein', price:4.00, desc:'Pommes mit Dönerfleisch und Sauce in kleiner Portion.', tags:['Snack'], image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'05', category:'doener', name:'Pommdöner groß', price:7.50, desc:'Pommes mit Dönerfleisch und Saucen in großer Portion.', tags:['Groß'], image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'06', category:'doener', name:'Salat Box Dönerfleisch', price:7.00, desc:'Salat mit Dönerfleisch und Sauce.', tags:['Leicht'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'},
-      {id:'07', category:'doener', name:'Döner Teller', price:12.00, desc:'Dönerfleisch mit Pommes oder Reis und Salat.', tags:['Teller'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
-      {id:'08', category:'doener', name:'Döner Teller komplett', price:15.00, desc:'Dönerfleisch, Pommes, Reis, Salat und Saucen.', tags:['Premium Teller'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
-      {id:'09', category:'doener', name:'Döner Portion (nur Fleisch) klein', price:9.90, desc:'Kleine Portion reines Dönerfleisch.', tags:['Protein'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
-      {id:'10', category:'doener', name:'Döner Portion (nur Fleisch) groß', price:15.00, desc:'Große Portion reines Dönerfleisch.', tags:['Groß'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
+ <script>
+  const menuData = [
+    {id:'01', category:'doener', name:'Döner Tasche', price:7.00, desc:'Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und Sauce.', tags:['Bestseller','Halal'], image:'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80'},
+    {id:'02', category:'doener', name:'Jumbo Döner', price:9.90, desc:'Große Portion Döner im Fladenbrot.', tags:['Groß','Beliebt'], image:'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=1200&q=80'},
+    {id:'03', category:'doener', name:'Döner Dürüm', price:8.50, desc:'Dönerfleisch im Yufka gerollt.', tags:['To-Go'], image:'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80'},
+    {id:'04', category:'doener', name:'Pommdöner klein', price:4.00, desc:'Pommes mit Dönerfleisch und Sauce in kleiner Portion.', tags:['Snack'], image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'05', category:'doener', name:'Pommdöner groß', price:7.50, desc:'Pommes mit Dönerfleisch und Saucen in großer Portion.', tags:['Groß'], image:'https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'06', category:'doener', name:'Salat Box Dönerfleisch', price:7.00, desc:'Salat mit Dönerfleisch und Sauce.', tags:['Leicht'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'},
+    {id:'07', category:'doener', name:'Döner Teller', price:12.00, desc:'Dönerfleisch mit Pommes oder Reis und Salat.', tags:['Teller'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
+    {id:'08', category:'doener', name:'Döner Teller komplett', price:15.00, desc:'Dönerfleisch, Pommes, Reis, Salat und Saucen.', tags:['Premium Teller'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
+    {id:'09', category:'doener', name:'Döner Portion (nur Fleisch) klein', price:9.90, desc:'Kleine Portion reines Dönerfleisch.', tags:['Protein'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
+    {id:'10', category:'doener', name:'Döner Portion (nur Fleisch) groß', price:15.00, desc:'Große Portion reines Dönerfleisch.', tags:['Groß'], image:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80'},
 
-      {id:'11', category:'lahmacun', name:'Lahmacun', price:3.50, desc:'Türkische Pizza mit Hackfleisch.', tags:['Klassiker'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'12', category:'lahmacun', name:'Lahmacun mit Salat', price:6.00, desc:'Türkische Pizza mit Hackfleisch und frischem Salat.', tags:['Frisch'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'13', category:'lahmacun', name:'Lahmacun mit Dönerfleisch', price:10.00, desc:'Lahmacun mit zusätzlichem Dönerfleisch.', tags:['Beliebt'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'14', category:'lahmacun', name:'Pide Gouda Käse', price:8.50, desc:'Pide mit Gouda Käse.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
-      {id:'15', category:'lahmacun', name:'Pide Weich Käse', price:9.50, desc:'Pide mit Weichkäse.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
-      {id:'16', category:'lahmacun', name:'Pide Hackfleisch', price:10.00, desc:'Pide mit Hackfleisch.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
-      {id:'17', category:'lahmacun', name:'Pide Sucuk & Käse', price:10.00, desc:'Pide mit Sucuk und Käse.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
-      {id:'18', category:'lahmacun', name:'Pide mit Dönerfleisch', price:10.00, desc:'Pide mit Dönerfleisch.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
+    {id:'11', category:'lahmacun', name:'Lahmacun', price:3.50, desc:'Türkische Pizza mit Hackfleisch.', tags:['Klassiker'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'12', category:'lahmacun', name:'Lahmacun mit Salat', price:6.00, desc:'Türkische Pizza mit Hackfleisch und frischem Salat.', tags:['Frisch'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'13', category:'lahmacun', name:'Lahmacun mit Dönerfleisch', price:10.00, desc:'Lahmacun mit zusätzlichem Dönerfleisch.', tags:['Beliebt'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'14', category:'lahmacun', name:'Pide Gouda Käse', price:8.50, desc:'Pide mit Gouda Käse.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
+    {id:'15', category:'lahmacun', name:'Pide Weich Käse', price:9.50, desc:'Pide mit Weichkäse.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
+    {id:'16', category:'lahmacun', name:'Pide Hackfleisch', price:10.00, desc:'Pide mit Hackfleisch.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
+    {id:'17', category:'lahmacun', name:'Pide Sucuk & Käse', price:10.00, desc:'Pide mit Sucuk und Käse.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
+    {id:'18', category:'lahmacun', name:'Pide mit Dönerfleisch', price:10.00, desc:'Pide mit Dönerfleisch.', tags:['Pide'], image:'https://images.unsplash.com/photo-1548365328-9f547fb0953b?auto=format&fit=crop&w=1200&q=80'},
 
-      {id:'19', category:'pizza', name:'Pizza Margherita', price:8.00, desc:'30 cm Pizza mit Tomatensauce und Käse.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'20', category:'pizza', name:'Pizza Zwiebeln', price:9.00, desc:'30 cm Pizza mit Zwiebeln.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'21', category:'pizza', name:'Pizza Champignons', price:9.50, desc:'30 cm Pizza mit Champignons.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'22', category:'pizza', name:'Pizza Spinat', price:9.50, desc:'30 cm Pizza mit Spinat.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'23', category:'pizza', name:'Pizza Salami', price:9.50, desc:'30 cm Pizza mit Salami.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'24', category:'pizza', name:'Pizza Thunfisch', price:10.00, desc:'30 cm Pizza mit Thunfisch.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'25', category:'pizza', name:'Pizza Vegetarisch', price:11.00, desc:'30 cm Pizza nach Wahl mit 2 Zutaten.', tags:['30 cm','Veggie'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'26', category:'pizza', name:'Pizza Döner', price:11.50, desc:'30 cm Pizza mit Döner Kalb oder Hähnchen.', tags:['30 cm','Bestseller'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'26a', category:'pizza', name:'Pizza Hollandais', price:14.00, desc:'Hähnchenfleisch, Brokkoli, Mais und Pilze.', tags:['30 cm','Spezial'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'27', category:'pizza', name:'Pizza Hawaii', price:11.50, desc:'30 cm Pizza Hawaii.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'28', category:'pizza', name:'Pizza Diavola', price:12.00, desc:'30 cm Pizza Diavola.', tags:['30 cm','Scharf'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'29', category:'pizza', name:'Pizza Caprese', price:12.00, desc:'30 cm Pizza Caprese.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'30', category:'pizza', name:'Pizza 4 Jahreszeiten', price:13.00, desc:'Champignon, Spinat, Schinken und Salami.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'31', category:'pizza', name:'Pizza Istanbul (Spezial)', price:14.00, desc:'Dönerfleisch, Zwiebel, Peperoni, Oliven und Weichkäse.', tags:['30 cm','Spezial'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
-      {id:'32', category:'pizza', name:'Party Pizza 60×40 cm', price:0.00, desc:'Gouda Käse, jeder weitere Belag 5 Euro.', tags:['Party','Preis auf Anfrage'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'19', category:'pizza', name:'Pizza Margherita', price:8.00, desc:'30 cm Pizza mit Tomatensauce und Käse.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'20', category:'pizza', name:'Pizza Zwiebeln', price:9.00, desc:'30 cm Pizza mit Zwiebeln.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'21', category:'pizza', name:'Pizza Champignons', price:9.50, desc:'30 cm Pizza mit Champignons.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'22', category:'pizza', name:'Pizza Spinat', price:9.50, desc:'30 cm Pizza mit Spinat.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'23', category:'pizza', name:'Pizza Salami', price:9.50, desc:'30 cm Pizza mit Salami.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'24', category:'pizza', name:'Pizza Thunfisch', price:10.00, desc:'30 cm Pizza mit Thunfisch.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'25', category:'pizza', name:'Pizza Vegetarisch', price:11.00, desc:'30 cm Pizza nach Wahl mit 2 Zutaten.', tags:['30 cm','Veggie'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'26', category:'pizza', name:'Pizza Döner', price:11.50, desc:'30 cm Pizza mit Döner Kalb oder Hähnchen.', tags:['30 cm','Bestseller'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'26a', category:'pizza', name:'Pizza Hollandais', price:14.00, desc:'Hähnchenfleisch, Brokkoli, Mais und Pilze.', tags:['30 cm','Spezial'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'27', category:'pizza', name:'Pizza Hawaii', price:11.50, desc:'30 cm Pizza Hawaii.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'28', category:'pizza', name:'Pizza Diavola', price:12.00, desc:'30 cm Pizza Diavola.', tags:['30 cm','Scharf'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'29', category:'pizza', name:'Pizza Caprese', price:12.00, desc:'30 cm Pizza Caprese.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'30', category:'pizza', name:'Pizza 4 Jahreszeiten', price:13.00, desc:'Champignon, Spinat, Schinken und Salami.', tags:['30 cm'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'31', category:'pizza', name:'Pizza Istanbul (Spezial)', price:14.00, desc:'Dönerfleisch, Zwiebel, Peperoni, Oliven und Weichkäse.', tags:['30 cm','Spezial'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
+    {id:'32', category:'pizza', name:'Party Pizza 60×40 cm', price:0.00, desc:'Gouda Käse, jeder weitere Belag 5 Euro.', tags:['Party','Preis auf Anfrage'], image:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80'},
 
-      {id:'33', category:'schnitzel', name:'Wiener Schnitzel', price:12.00, desc:'Mit Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
-      {id:'34', category:'schnitzel', name:'Jäger Schnitzel', price:13.50, desc:'Mit Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
-      {id:'35', category:'schnitzel', name:'Paprika Schnitzel', price:14.00, desc:'Mit pikanter Tomatensauce, Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
-      {id:'36', category:'schnitzel', name:'Rahm Schnitzel', price:14.50, desc:'Mit Hollandaise und Käse überbacken, dazu Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
+    {id:'33', category:'schnitzel', name:'Wiener Schnitzel', price:12.00, desc:'Mit Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
+    {id:'34', category:'schnitzel', name:'Jäger Schnitzel', price:13.50, desc:'Mit Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
+    {id:'35', category:'schnitzel', name:'Paprika Schnitzel', price:14.00, desc:'Mit pikanter Tomatensauce, Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
+    {id:'36', category:'schnitzel', name:'Rahm Schnitzel', price:14.50, desc:'Mit Hollandaise und Käse überbacken, dazu Salat und Pommes oder Reis.', tags:['Putenfleisch'], image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80'},
 
-      {id:'37', category:'veggie', name:'Falafel Tasche', price:7.00, desc:'Hausgemacht und täglich frisch.', tags:['Veggie'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'38', category:'veggie', name:'Falafel Dürüm', price:8.00, desc:'Falafel im Yufka gerollt.', tags:['Veggie'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'39', category:'veggie', name:'Falafel Teller', price:11.00, desc:'Falafel Teller als volle Mahlzeit.', tags:['Veggie'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
-      {id:'40', category:'veggie', name:'Halloumi Tasche', price:6.50, desc:'Mit Halloumi im Brot.', tags:['Vegetarisch'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'},
-      {id:'41', category:'veggie', name:'Halloumi Teller', price:10.00, desc:'Tellergericht mit Halloumi.', tags:['Vegetarisch'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'},
-      {id:'42', category:'veggie', name:'Halloumi Falafel Teller', price:13.50, desc:'Kombination aus Halloumi und Falafel.', tags:['Vegetarisch','Groß'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'}
-    ];
+    {id:'37', category:'veggie', name:'Falafel Tasche', price:7.00, desc:'Hausgemacht und täglich frisch.', tags:['Veggie'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'38', category:'veggie', name:'Falafel Dürüm', price:8.00, desc:'Falafel im Yufka gerollt.', tags:['Veggie'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'39', category:'veggie', name:'Falafel Teller', price:11.00, desc:'Falafel Teller als volle Mahlzeit.', tags:['Veggie'], image:'https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80'},
+    {id:'40', category:'veggie', name:'Halloumi Tasche', price:6.50, desc:'Mit Halloumi im Brot.', tags:['Vegetarisch'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'},
+    {id:'41', category:'veggie', name:'Halloumi Teller', price:10.00, desc:'Tellergericht mit Halloumi.', tags:['Vegetarisch'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'},
+    {id:'42', category:'veggie', name:'Halloumi Falafel Teller', price:13.50, desc:'Kombination aus Halloumi und Falafel.', tags:['Vegetarisch','Groß'], image:'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80'}
+  ];
 
-    const cart = [];
-    const DELIVERY_FEE = 2.90;
-    const DELIVERY_MIN = 15.00;
-    const WA_NUMBER = '491728787094';
+  const cart = [];
+  const tempQty = {};
+  const DELIVERY_FEE = 2.90;
+  const DELIVERY_MIN = 15.00;
+  const WA_NUMBER = '491728787094';
 
-    const menuList = document.getElementById('menuList');
-    const searchInput = document.getElementById('menuSearch');
-    const cartItems = document.getElementById('cartItems');
-    const emptyBox = document.getElementById('emptyBox');
-    const subtotalEl = document.getElementById('subtotal');
-    const deliveryFeeEl = document.getElementById('deliveryFee');
-    const totalEl = document.getElementById('total');
-    const stickyCount = document.getElementById('stickyCount');
-    const stickyTotal = document.getElementById('stickyTotal');
-    const successBox = document.getElementById('successBox');
-    const errorBox = document.getElementById('errorBox');
-    const stickyBar = document.getElementById('stickyBar');
+  const menuList = document.getElementById('menuList');
+  const searchInput = document.getElementById('menuSearch');
+  const cartItems = document.getElementById('cartItems');
+  const emptyBox = document.getElementById('emptyBox');
+  const subtotalEl = document.getElementById('subtotal');
+  const deliveryFeeEl = document.getElementById('deliveryFee');
+  const totalEl = document.getElementById('total');
+  const stickyCount = document.getElementById('stickyCount');
+  const stickyTotal = document.getElementById('stickyTotal');
+  const successBox = document.getElementById('successBox');
+  const errorBox = document.getElementById('errorBox');
+  const stickyBar = document.getElementById('stickyBar');
 
-    let currentFilter = 'all';
+  let currentFilter = 'all';
 
-    function euro(value){
-      if(value === 0) return 'Preis auf Anfrage';
-      return value.toLocaleString('de-DE', {style:'currency', currency:'EUR'});
+  function euro(value){
+    if(value === 0) return 'Preis auf Anfrage';
+    return value.toLocaleString('de-DE', { style:'currency', currency:'EUR' });
+  }
+
+  function escapeHtml(value){
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function getTempQty(id){
+    return tempQty[id] || 1;
+  }
+
+  function renderMenu(){
+    const search = searchInput.value.trim().toLowerCase();
+
+    const filtered = menuData.filter(item => {
+      const matchesFilter = currentFilter === 'all' || item.category === currentFilter;
+      const haystack = `${item.name} ${item.desc} ${(item.tags || []).join(' ')}`.toLowerCase();
+      const matchesSearch = haystack.includes(search);
+      return matchesFilter && matchesSearch;
+    });
+
+    if(filtered.length === 0){
+      menuList.innerHTML = `
+        <div class="empty-box" style="grid-column:1/-1">
+          Keine Produkte gefunden.
+        </div>
+      `;
+      return;
     }
 
-    function escapeHtml(value){
-      return String(value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+    menuList.innerHTML = filtered.map(item => `
+      <article class="menu-item">
+        <img
+          class="menu-image"
+          src="${escapeHtml(item.image || 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80')}"
+          alt="${escapeHtml(item.name)}"
+        />
+
+        <div class="menu-top">
+          <div>
+            <h3>${escapeHtml(item.id)}. ${escapeHtml(item.name)}</h3>
+            <p class="menu-desc">${escapeHtml(item.desc)}</p>
+          </div>
+          <strong class="price">${euro(item.price)}</strong>
+        </div>
+
+        <div class="menu-tags">
+          ${(item.tags || []).map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
+        </div>
+
+        <div class="menu-actions">
+          <div class="qty">
+            <button type="button" onclick="changeTempQty('${String(item.id)}', -1)">−</button>
+            <span class="qty-value" id="qty-${String(item.id)}">${getTempQty(item.id)}</span>
+            <button type="button" onclick="changeTempQty('${String(item.id)}', 1)">+</button>
+          </div>
+
+          <button
+            class="btn btn-primary"
+            ${item.price === 0 ? 'disabled style="opacity:.6;cursor:not-allowed"' : `onclick="addToCart('${String(item.id)}')"`}
+          >
+            ${item.price === 0 ? 'Anfragen' : 'Hinzufügen'}
+          </button>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  function changeTempQty(id, change){
+    const current = tempQty[id] || 1;
+    tempQty[id] = Math.max(1, current + change);
+
+    const qtyEl = document.getElementById(`qty-${id}`);
+    if(qtyEl) qtyEl.textContent = tempQty[id];
+  }
+
+  function addToCart(id){
+    const item = menuData.find(entry => String(entry.id) === String(id));
+    if(!item || item.price === 0) return;
+
+    const qty = tempQty[id] || 1;
+    const existing = cart.find(entry => String(entry.id) === String(id));
+
+    if(existing){
+      existing.qty += qty;
+    } else {
+      cart.push({ ...item, qty });
     }
 
-    function renderMenu(){
-      const search = searchInput.value.trim().toLowerCase();
+    tempQty[id] = 1;
+    renderMenu();
+    updateCart();
+    showSuccess('Produkt zum Warenkorb hinzugefügt.');
+  }
 
-      const filtered = menuData.filter(item => {
-        const matchesFilter = currentFilter === 'all' || item.category === currentFilter;
-        const haystack = `${item.name} ${item.desc} ${(item.tags||[]).join(' ')}`.toLowerCase();
-        const matchesSearch = haystack.includes(search);
-        return matchesFilter && matchesSearch;
-      });
+  function updateCart(){
+    cartItems.innerHTML = '';
+    const orderType = document.querySelector('input[name="orderType"]:checked').value;
 
-      menuList.innerHTML = '';
+    if(cart.length === 0){
+      emptyBox.style.display = 'block';
+    } else {
+      emptyBox.style.display = 'none';
 
-      filtered.forEach(item => {
-        const row = document.createElement('article');
-        row.className = 'menu-item';
-
+      cart.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = 'cart-row';
         row.innerHTML = `
-          <img class="menu-image" src="${escapeHtml(item.image || 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80')}" alt="${escapeHtml(item.name)}" />
-          <div class="menu-top">
-            <div>
-              <h3>${escapeHtml(item.id)}. ${escapeHtml(item.name)}</h3>
-              <p class="menu-desc">${escapeHtml(item.desc)}</p>
-            </div>
-            <strong class="price">${euro(item.price)}</strong>
+          <div>
+            <strong>${escapeHtml(item.name)}</strong>
+            <div class="helper">${euro(item.price)} × ${item.qty}</div>
           </div>
-          <div class="menu-tags">
-            ${(item.tags || []).map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
-          </div>
-          <div class="menu-actions">
-            <div class="qty">
-              <button type="button" onclick="changeTempQty(this,-1)">−</button>
-              <span class="qty-value">1</span>
-              <button type="button" onclick="changeTempQty(this,1)">+</button>
-            </div>
-            <button
-              class="btn btn-primary"
-              ${item.price === 0 ? 'disabled style="opacity:.6;cursor:not-allowed"' : `onclick="addToCart('${String(item.id).replace(/'/g, "\\'")}')"`}>
-              ${item.price === 0 ? 'Anfragen' : 'Hinzufügen'}
-            </button>
+          <div class="qty-cart">
+            <button type="button" onclick="changeCartQty(${index}, -1)">−</button>
+            <strong>${item.qty}</strong>
+            <button type="button" onclick="changeCartQty(${index}, 1)">+</button>
           </div>
         `;
-        menuList.appendChild(row);
+        cartItems.appendChild(row);
       });
     }
 
-    function changeTempQty(button, change){
-      const valueEl = button.parentElement.querySelector('.qty-value');
-      let value = Number(valueEl.textContent) || 1;
-      value = Math.max(1, value + change);
-      valueEl.textContent = value;
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const deliveryFee = orderType === 'Lieferung' && subtotal > 0 ? DELIVERY_FEE : 0;
+    const total = subtotal + deliveryFee;
+    const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+
+    subtotalEl.textContent = euro(subtotal);
+    deliveryFeeEl.textContent = euro(deliveryFee);
+    totalEl.textContent = euro(total);
+    stickyCount.textContent = `${itemCount} Artikel`;
+    stickyTotal.textContent = `${euro(total)} gesamt`;
+
+    if(window.innerWidth <= 780 && itemCount > 0){
+      stickyBar.style.display = 'block';
+    } else {
+      stickyBar.style.display = 'none';
     }
+  }
 
-    function addToCart(id){
-      const item = menuData.find(entry => String(entry.id) === String(id));
-      if(!item || item.price === 0) return;
-
-      const card = [...document.querySelectorAll('.menu-item')].find(el => {
-        const title = el.querySelector('h3');
-        return title && title.textContent.startsWith(`${item.id}.`);
-      });
-
-      if(!card) return;
-
-      const qtyEl = card.querySelector('.qty-value');
-      const qty = Number(qtyEl.textContent) || 1;
-      const existing = cart.find(entry => String(entry.id) === String(item.id));
-
-      if(existing){
-        existing.qty += qty;
-      } else {
-        cart.push({...item, qty});
-      }
-
-      qtyEl.textContent = 1;
-      updateCart();
-      showSuccess('Produkt zum Warenkorb hinzugefügt.');
-    }
-
-    function updateCart(){
-      cartItems.innerHTML = '';
-      const orderType = document.querySelector('input[name="orderType"]:checked').value;
-
-      if(cart.length === 0){
-        emptyBox.style.display = 'block';
-      } else {
-        emptyBox.style.display = 'none';
-
-        cart.forEach((item, index) => {
-          const row = document.createElement('div');
-          row.className = 'cart-row';
-          row.innerHTML = `
-            <div>
-              <strong>${escapeHtml(item.name)}</strong>
-              <div class="helper">${euro(item.price)} × ${item.qty}</div>
-            </div>
-            <div class="qty-cart">
-              <button type="button" onclick="changeCartQty(${index},-1)">−</button>
-              <strong>${item.qty}</strong>
-              <button type="button" onclick="changeCartQty(${index},1)">+</button>
-            </div>
-          `;
-          cartItems.appendChild(row);
-        });
-      }
-
-      const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-      const deliveryFee = orderType === 'Lieferung' && subtotal > 0 ? DELIVERY_FEE : 0;
-      const total = subtotal + deliveryFee;
-      const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
-
-      subtotalEl.textContent = euro(subtotal);
-      deliveryFeeEl.textContent = euro(deliveryFee);
-      totalEl.textContent = euro(total);
-      stickyCount.textContent = `${itemCount} Artikel`;
-      stickyTotal.textContent = `${euro(total)} gesamt`;
-
-      if(window.innerWidth <= 780 && itemCount > 0){
-        stickyBar.style.display = 'block';
-      } else {
-        stickyBar.style.display = 'none';
-      }
-    }
-
-    function changeCartQty(index, change){
-      if(!cart[index]) return;
-      cart[index].qty += change;
-      if(cart[index].qty <= 0) cart.splice(index, 1);
-      updateCart();
-    }
-
-    function clearCart(){
-      cart.length = 0;
-      updateCart();
-      showSuccess('Warenkorb geleert.');
-    }
-
-    function showSuccess(message){
-      successBox.textContent = message;
-      successBox.style.display = 'block';
-      errorBox.style.display = 'none';
-      clearTimeout(window.successTimeout);
-      window.successTimeout = setTimeout(() => successBox.style.display = 'none', 2800);
-    }
-
-    function showError(message){
-      errorBox.textContent = message;
-      errorBox.style.display = 'block';
-      successBox.style.display = 'none';
-      clearTimeout(window.errorTimeout);
-      window.errorTimeout = setTimeout(() => errorBox.style.display = 'none', 3200);
-    }
-
-    function updateOrderTypeStyles(){
-      document.querySelectorAll('.order-type label').forEach(label => {
-        const input = label.querySelector('input');
-        label.classList.toggle('active', input.checked);
-      });
-    }
-
-    function submitOrder(){
-      const name = document.getElementById('customerName').value.trim();
-      const phone = document.getElementById('customerPhone').value.trim();
-      const address = document.getElementById('customerAddress').value.trim();
-      const note = document.getElementById('customerNote').value.trim();
-      const time = document.getElementById('customerTime').value;
-      const payment = document.getElementById('customerPayment').value;
-      const orderType = document.querySelector('input[name="orderType"]:checked').value;
-      const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-      const deliveryFee = orderType === 'Lieferung' && subtotal > 0 ? DELIVERY_FEE : 0;
-      const total = subtotal + deliveryFee;
-
-      if(!name || !phone || cart.length === 0){
-        showError('Bitte Name, Telefonnummer und mindestens ein Produkt angeben.');
-        return;
-      }
-
-      if(orderType === 'Lieferung' && !address){
-        showError('Bitte bei Lieferung eine Adresse eintragen.');
-        return;
-      }
-
-      if(orderType === 'Lieferung' && subtotal < DELIVERY_MIN){
-        showError(`Lieferung laut Karte erst ab ${euro(DELIVERY_MIN)}.`);
-        return;
-      }
-
-      const itemsText = cart
-        .map(item => `- ${item.qty}x ${item.name} (${euro(item.price * item.qty)})`)
-        .join('%0A');
-
-      const message =
-        `Neue Bestellung für City Döner Frechen%0A%0A` +
-        `Name: ${encodeURIComponent(name)}%0A` +
-        `Telefon: ${encodeURIComponent(phone)}%0A` +
-        `Bestellart: ${encodeURIComponent(orderType)}%0A` +
-        `Adresse: ${encodeURIComponent(address || '-')}%0A` +
-        `Uhrzeit: ${encodeURIComponent(time)}%0A` +
-        `Zahlung: ${encodeURIComponent(payment)}%0A` +
-        `Anmerkung: ${encodeURIComponent(note || '-')}%0A%0A` +
-        `Produkte:%0A${itemsText}%0A%0A` +
-        `Zwischensumme: ${encodeURIComponent(euro(subtotal))}%0A` +
-        `Liefergebühr: ${encodeURIComponent(euro(deliveryFee))}%0A` +
-        `Gesamt: ${encodeURIComponent(euro(total))}`;
-
-      window.open(`https://wa.me/${WA_NUMBER}?text=${message}`, '_blank');
-      showSuccess('WhatsApp-Bestellung wurde vorbereitet.');
-    }
-
-    searchInput.addEventListener('input', renderMenu);
-
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        renderMenu();
-      });
-    });
-
-    document.querySelectorAll('input[name="orderType"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        updateOrderTypeStyles();
-        updateCart();
-      });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, {threshold: 0.12});
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    window.addEventListener('resize', updateCart);
-
-    renderMenu();
-    updateOrderTypeStyles();
+  function changeCartQty(index, change){
+    if(!cart[index]) return;
+    cart[index].qty += change;
+    if(cart[index].qty <= 0) cart.splice(index, 1);
     updateCart();
-  </script>
+  }
+
+  function clearCart(){
+    cart.length = 0;
+    updateCart();
+    showSuccess('Warenkorb geleert.');
+  }
+
+  function showSuccess(message){
+    successBox.textContent = message;
+    successBox.style.display = 'block';
+    errorBox.style.display = 'none';
+    clearTimeout(window.successTimeout);
+    window.successTimeout = setTimeout(() => {
+      successBox.style.display = 'none';
+    }, 2800);
+  }
+
+  function showError(message){
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+    successBox.style.display = 'none';
+    clearTimeout(window.errorTimeout);
+    window.errorTimeout = setTimeout(() => {
+      errorBox.style.display = 'none';
+    }, 3200);
+  }
+
+  function updateOrderTypeStyles(){
+    document.querySelectorAll('.order-type label').forEach(label => {
+      const input = label.querySelector('input');
+      label.classList.toggle('active', input.checked);
+    });
+  }
+
+  function submitOrder(){
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('customerPhone').value.trim();
+    const address = document.getElementById('customerAddress').value.trim();
+    const note = document.getElementById('customerNote').value.trim();
+    const time = document.getElementById('customerTime').value;
+    const payment = document.getElementById('customerPayment').value;
+    const orderType = document.querySelector('input[name="orderType"]:checked').value;
+
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const deliveryFee = orderType === 'Lieferung' && subtotal > 0 ? DELIVERY_FEE : 0;
+    const total = subtotal + deliveryFee;
+
+    if(!name || !phone || cart.length === 0){
+      showError('Bitte Name, Telefonnummer und mindestens ein Produkt angeben.');
+      return;
+    }
+
+    if(orderType === 'Lieferung' && !address){
+      showError('Bitte bei Lieferung eine Adresse eintragen.');
+      return;
+    }
+
+    if(orderType === 'Lieferung' && subtotal < DELIVERY_MIN){
+      showError(`Lieferung laut Karte erst ab ${euro(DELIVERY_MIN)}.`);
+      return;
+    }
+
+    const itemsText = cart
+      .map(item => `- ${item.qty}x ${item.name} (${euro(item.price * item.qty)})`)
+      .join('%0A');
+
+    const message =
+      `Neue Bestellung für City Döner Frechen%0A%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Telefon: ${encodeURIComponent(phone)}%0A` +
+      `Bestellart: ${encodeURIComponent(orderType)}%0A` +
+      `Adresse: ${encodeURIComponent(address || '-')}%0A` +
+      `Uhrzeit: ${encodeURIComponent(time)}%0A` +
+      `Zahlung: ${encodeURIComponent(payment)}%0A` +
+      `Anmerkung: ${encodeURIComponent(note || '-')}%0A%0A` +
+      `Produkte:%0A${itemsText}%0A%0A` +
+      `Zwischensumme: ${encodeURIComponent(euro(subtotal))}%0A` +
+      `Liefergebühr: ${encodeURIComponent(euro(deliveryFee))}%0A` +
+      `Gesamt: ${encodeURIComponent(euro(total))}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${message}`, '_blank');
+    showSuccess('WhatsApp-Bestellung wurde vorbereitet.');
+  }
+
+  searchInput.addEventListener('input', renderMenu);
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderMenu();
+    });
+  });
+
+  document.querySelectorAll('input[name="orderType"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      updateOrderTypeStyles();
+      updateCart();
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  window.addEventListener('resize', updateCart);
+
+  renderMenu();
+  updateOrderTypeStyles();
+  updateCart();
+</script>
 </body>
 </html>

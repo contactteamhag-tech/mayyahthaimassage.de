@@ -211,37 +211,14 @@
       gap:22px;
       align-items:start;
     }
-    .story-photo-wrap{
-      display:grid;
-      gap:18px;
-    }
     .story-photo{
+      min-height:420px;
       border-radius:var(--radius);
-      overflow:hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06)),
+        url('images/city-doener-1.jpg') center/cover no-repeat;
       border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:#fff;
-    }
-    .story-photo img{
-      width:100%;
-      height:320px;
-      object-fit:cover;
-    }
-    .story-logo-card{
-      background:linear-gradient(180deg,var(--card-strong),var(--card));
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow-soft);
-      padding:26px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:150px;
-    }
-    .story-logo-card img{
-      width:min(220px, 70%);
-      height:auto;
-      object-fit:contain;
+      box-shadow:var(--shadow)
     }
     .story-card{padding:34px}
     .story-card h2{margin:18px 0 14px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.02}
@@ -454,7 +431,6 @@
       .field-group label:nth-child(5){grid-column:1/-1}
       .section{padding:72px 0}
       .contact-row,.hours li{flex-direction:column;align-items:flex-start}
-      .story-photo img{height:260px}
     }
   </style>
 </head>
@@ -603,15 +579,7 @@
 
     <section class="section">
       <div class="container story-layout">
-        <div class="story-photo-wrap reveal">
-          <div class="story-photo">
-            <img src="images/city-doener-1.jpg" alt="City Döner Frechen Außenansicht" />
-          </div>
-
-          <div class="story-logo-card">
-            <img src="images/logo-citydoener.png" alt="City Döner Logo" />
-          </div>
-        </div>
+        <div class="story-photo reveal" aria-label="City Döner Frechen Familienbetrieb"></div>
 
         <div class="story-card card reveal">
           <span class="eyebrow">Mit Herz für Frechen</span>

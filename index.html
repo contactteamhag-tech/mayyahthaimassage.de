@@ -205,13 +205,20 @@
     .highlight-card h4{margin:14px 0 6px;font-size:1.06rem}
     .highlight-card p{color:var(--muted);font-size:.93rem;min-height:46px}
 
-    .story-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:center}
+    .story-layout{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      align-items:start;
+    }
     .story-photo{
-      min-height:560px;border-radius:var(--radius);
+      min-height:420px;
+      border-radius:var(--radius);
       background:
-        linear-gradient(135deg, rgba(255,255,255,.28), rgba(255,255,255,.10)),
+        linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06)),
         url('images/city-doener-1.jpg') center/cover no-repeat;
-      border:1px solid var(--line);box-shadow:var(--shadow)
+      border:1px solid var(--line);
+      box-shadow:var(--shadow)
     }
     .story-card{padding:34px}
     .story-card h2{margin:18px 0 14px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.02}
@@ -439,12 +446,12 @@
       </a>
 
       <nav class="nav-links" aria-label="Hauptnavigation">
-  <a href="#highlights">Highlights</a>
-  <a href="#menu">Speisekarte</a>
-  <a href="#order">Bestellen</a>
-  <a href="#gallery">Galerie</a>
-  <a href="#contact">Kontakt</a>
-</nav>
+        <a href="#highlights">Highlights</a>
+        <a href="#menu">Speisekarte</a>
+        <a href="#order">Bestellen</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
 
       <div class="nav-actions">
         <a class="btn btn-secondary" href="https://www.instagram.com/citydoener_frechen/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -546,66 +553,66 @@
         </div>
 
         <div class="highlights-grid">
-  <article class="highlight-card reveal">
-    <img src="images/doener-tasche.jpg" alt="Döner Tasche" />
-    <h4>Döner Tasche</h4>
-    <p>Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und hausgemachter Sauce.</p>
-    <strong class="price">7,00 €</strong>
-  </article>
+          <article class="highlight-card reveal">
+            <img src="images/doener-tasche.jpg" alt="Döner Tasche" />
+            <h4>Döner Tasche</h4>
+            <p>Kalb- oder Hähnchenfleisch im Fladenbrot mit Salat und hausgemachter Sauce.</p>
+            <strong class="price">7,00 €</strong>
+          </article>
 
-  <article class="highlight-card reveal">
-    <img src="images/doener-pizza.jpg" alt="Pizza Döner" />
-    <h4>Pizza Döner</h4>
-    <p>30 cm Pizza mit Döner Kalb oder Hähnchen.</p>
-    <strong class="price">11,50 €</strong>
-  </article>
+          <article class="highlight-card reveal">
+            <img src="images/doener-pizza.jpg" alt="Pizza Döner" />
+            <h4>Pizza Döner</h4>
+            <p>30 cm Pizza mit Döner Kalb oder Hähnchen.</p>
+            <strong class="price">11,50 €</strong>
+          </article>
 
-  <article class="highlight-card reveal">
-    <img src="images/wiener-schnitzel.jpg" alt="Wiener Schnitzel" />
-    <h4>Rahm Schnitzel</h4>
-    <p>Mit Hollandaise und Käse überbacken, dazu Salat sowie Pommes oder Reis.</p>
-    <strong class="price">14,50 €</strong>
-  </article>
-</div>
+          <article class="highlight-card reveal">
+            <img src="images/wiener-schnitzel.jpg" alt="Wiener Schnitzel" />
+            <h4>Rahm Schnitzel</h4>
+            <p>Mit Hollandaise und Käse überbacken, dazu Salat sowie Pommes oder Reis.</p>
+            <strong class="price">14,50 €</strong>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section">
-  <div class="container story-layout">
-    <div class="story-photo reveal" aria-label="City Döner Frechen Familienbetrieb"></div>
+      <div class="container story-layout">
+        <div class="story-photo reveal" aria-label="City Döner Frechen Familienbetrieb"></div>
 
-    <div class="story-card card reveal">
-      <span class="eyebrow">Mit Herz für Frechen</span>
-      <h2 class="headline">Familienbetrieb mit echter Leidenschaft für gutes Essen</h2>
-      <p>
-        City Döner Frechen steht für frische Speisen, herzlichen Service und ehrliche Gastronomie im Alltag.
-        Als Familienbetrieb zählt hier nicht nur der schnelle Service, sondern vor allem die Qualität auf dem Teller
-        und ein freundlicher Umgang mit jedem Gast.
-      </p>
+        <div class="story-card card reveal">
+          <span class="eyebrow">Mit Herz für Frechen</span>
+          <h2 class="headline">Familienbetrieb mit echter Leidenschaft für gutes Essen</h2>
+          <p>
+            City Döner Frechen steht für frische Speisen, herzlichen Service und ehrliche Gastronomie im Alltag.
+            Als Familienbetrieb zählt hier nicht nur der schnelle Service, sondern vor allem die Qualität auf dem Teller
+            und ein freundlicher Umgang mit jedem Gast.
+          </p>
 
-      <p style="margin-top:16px;">
-        Ob klassischer Döner, Pizza, Lahmacun, Pide oder vegetarische Gerichte – jedes Essen wird mit Sorgfalt
-        zubereitet und mit dem Anspruch serviert, dass Gäste gerne wiederkommen. Genau diese Mischung aus
-        Verlässlichkeit, Geschmack und persönlicher Atmosphäre macht City Döner Frechen aus.
-      </p>
+          <p style="margin-top:16px;">
+            Ob klassischer Döner, Pizza, Lahmacun, Pide oder vegetarische Gerichte – jedes Essen wird mit Sorgfalt
+            zubereitet und mit dem Anspruch serviert, dass Gäste gerne wiederkommen. Genau diese Mischung aus
+            Verlässlichkeit, Geschmack und persönlicher Atmosphäre macht City Döner Frechen aus.
+          </p>
 
-      <ul class="story-points">
-        <li>
-          <div class="check">✓</div>
-          <div><strong>Frisch zubereitet</strong><br>Gerichte werden mit viel Sorgfalt und einem klaren Qualitätsanspruch zubereitet.</div>
-        </li>
-        <li>
-          <div class="check">✓</div>
-          <div><strong>Familiäre Atmosphäre</strong><br>Freundlicher Service und ein persönlicher Umgang stehen hier im Mittelpunkt.</div>
-        </li>
-        <li>
-          <div class="check">✓</div>
-          <div><strong>Liebe zur Gastronomie</strong><br>Gutes Essen soll nicht nur satt machen, sondern Gästen ein gutes Gefühl mitgeben.</div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+          <ul class="story-points">
+            <li>
+              <div class="check">✓</div>
+              <div><strong>Frisch zubereitet</strong><br>Gerichte werden mit viel Sorgfalt und einem klaren Qualitätsanspruch zubereitet.</div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div><strong>Familiäre Atmosphäre</strong><br>Freundlicher Service und ein persönlicher Umgang stehen hier im Mittelpunkt.</div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div><strong>Liebe zur Gastronomie</strong><br>Gutes Essen soll nicht nur satt machen, sondern Gästen ein gutes Gefühl mitgeben.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="menu">
       <div class="container">
@@ -746,61 +753,61 @@
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-head reveal">
-  <div>
-    <span class="eyebrow">Restaurant-Galerie</span>
-  </div>
-</div>
+          <div>
+            <span class="eyebrow">Restaurant-Galerie</span>
+          </div>
+        </div>
 
-<div class="gallery-grid">
-  <div class="gallery-card reveal">
-    <img src="images/city-doener-1.jpg" alt="City Döner Frechen Bild 1" />
-    <div class="gallery-overlay">
-      <strong>City Döner Frechen</strong>
-      <span>Originale Einblicke direkt vom Standort – echt und unverfälscht.</span>
-    </div>
-  </div>
+        <div class="gallery-grid">
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-1.jpg" alt="City Döner Frechen Bild 1" />
+            <div class="gallery-overlay">
+              <strong>City Döner Frechen</strong>
+              <span>Originale Einblicke direkt vom Standort – echt und unverfälscht.</span>
+            </div>
+          </div>
 
-  <div class="gallery-card reveal">
-    <img src="images/city-doener-2.jpg" alt="City Döner Frechen Bild 2" />
-    <div class="gallery-overlay">
-      <strong>Laden & Speisen</strong>
-      <span>Frisch zubereitete Gerichte und ein sauberer, moderner Arbeitsbereich.</span>
-    </div>
-  </div>
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-2.jpg" alt="City Döner Frechen Bild 2" />
+            <div class="gallery-overlay">
+              <strong>Laden & Speisen</strong>
+              <span>Frisch zubereitete Gerichte und ein sauberer, moderner Arbeitsbereich.</span>
+            </div>
+          </div>
 
-  <div class="gallery-card reveal">
-    <img src="images/city-doener-3.jpg" alt="City Döner Frechen Bild 3" />
-    <div class="gallery-overlay">
-      <strong>Authentischer Eindruck</strong>
-      <span>Echte Atmosphäre vor Ort – so erleben Kunden den Laden täglich.</span>
-    </div>
-  </div>
-</div>
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-3.jpg" alt="City Döner Frechen Bild 3" />
+            <div class="gallery-overlay">
+              <strong>Authentischer Eindruck</strong>
+              <span>Echte Atmosphäre vor Ort – so erleben Kunden den Laden täglich.</span>
+            </div>
+          </div>
+        </div>
 
-          <div class="gallery-grid">
-  <div class="gallery-card reveal">
-    <img src="images/city-doener-1.jpg" alt="TV vor Ort" />
-    <div class="gallery-overlay">
-      <strong>TV vor Ort</strong>
-      <span>Live-Übertragungen direkt im Laden.</span>
-    </div>
-  </div>
+        <div class="gallery-grid" style="margin-top:18px;">
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-4.jpg" alt="TV vor Ort" />
+            <div class="gallery-overlay">
+              <strong>TV vor Ort</strong>
+              <span>Live-Übertragungen direkt im Laden.</span>
+            </div>
+          </div>
 
-  <div class="gallery-card reveal">
-    <img src="images/city-doener-2.jpg" alt="Halal zertifiziert" />
-    <div class="gallery-overlay">
-      <strong>Halal zertifiziert</strong>
-      <span>Qualität und Vertrauen bei allen Gerichten.</span>
-    </div>
-  </div>
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-5.jpg" alt="Halal zertifiziert" />
+            <div class="gallery-overlay">
+              <strong>Halal zertifiziert</strong>
+              <span>Qualität und Vertrauen bei allen Gerichten.</span>
+            </div>
+          </div>
 
-  <div class="gallery-card reveal">
-    <img src="images/city-doener-3.jpg" alt="Familienbetrieb" />
-    <div class="gallery-overlay">
-      <strong>Familienbetrieb</strong>
-      <span>Mit Herz geführt – seit Tag eins.</span>
-    </div>
-  </div>
+          <div class="gallery-card reveal">
+            <img src="images/city-doener-6.jpg" alt="Familienbetrieb" />
+            <div class="gallery-overlay">
+              <strong>Familienbetrieb</strong>
+              <span>Mit Herz geführt – seit Tag eins.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

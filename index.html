@@ -212,13 +212,32 @@
       align-items:start;
     }
     .story-photo{
-      min-height:420px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
       border-radius:var(--radius);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06)),
-        url('images/city-doener-1.jpg') center/cover no-repeat;
+      overflow:hidden;
       border:1px solid var(--line);
-      box-shadow:var(--shadow)
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+    .story-photo img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+    .story-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:24px;
+      background:linear-gradient(180deg,#ffffff,#f8fafc);
+    }
+    .story-logo img{
+      width:140px;
+      height:auto;
+      object-fit:contain;
+      opacity:.95;
     }
     .story-card{padding:34px}
     .story-card h2{margin:18px 0 14px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.02}
@@ -431,6 +450,7 @@
       .field-group label:nth-child(5){grid-column:1/-1}
       .section{padding:72px 0}
       .contact-row,.hours li{flex-direction:column;align-items:flex-start}
+      .story-photo img{height:260px}
     }
   </style>
 </head>
@@ -579,7 +599,12 @@
 
     <section class="section">
       <div class="container story-layout">
-        <div class="story-photo reveal" aria-label="City Döner Frechen Familienbetrieb"></div>
+        <div class="story-photo reveal">
+          <img src="images/city-doener-1.jpg" alt="City Döner Frechen Außenansicht" />
+          <div class="story-logo">
+            <img src="images/logo-citydoener.png" alt="City Döner Logo" />
+          </div>
+        </div>
 
         <div class="story-card card reveal">
           <span class="eyebrow">Mit Herz für Frechen</span>
